@@ -3,10 +3,8 @@
   font-family: Helvetica;
 }
 
-@import "components/header";
-
-$header-footer-color: #222;
 $header-height: 50px;
+$header-footer-color: #222;
 
 .app-header {
   background-color: $header-footer-color;

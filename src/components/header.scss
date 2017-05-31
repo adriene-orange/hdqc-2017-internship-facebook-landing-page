@@ -9,7 +9,7 @@
 
 .nav-home {
   display: inline-block;
-  height: $header-height;
+  height: 50px;
   padding: 10px;
   color: #00d8ff;
   font-size: 24px;
@@ -23,13 +23,13 @@
 
 .nav-list-left {
   display: inline-block;
-  height: $header-height;
+  height: 50px;
   flex: 5;
 }
 
 .nav-list-right {
   display: inline-block;
-  height: $header-height;
+  height: 50px;
   flex: 2;
 }
 

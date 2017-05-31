@@ -3,6 +3,8 @@
   font-family: Helvetica;
 }
 
+@import "components/header";
+
 $header-footer-color: #222;
 $header-height: 50px;
 
@@ -11,46 +13,6 @@ $header-height: 50px;
   width: 100%;
   height: $header-height;
   color: #ddd;
-}
-
-.nav {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 960px;
-  background-color: #222;
-  height: 100%;
-  display: flex;
-}
-
-.nav-home {
-  display: inline-block;
-  height: $header-height;
-  padding: 10px;
-  color: #00d8ff;
-  font-size: 24px;
-}
-
-.nav-logo {
-    vertical-align: middle;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.nav-list-left {
-  display: inline-block;
-  height: $header-height;
-  flex: 5;
-}
-
-.nav-list-right {
-  display: inline-block;
-  height: $header-height;
-  flex: 2;
-}
-
-.nav-list-item {
-  display: inline-block;
-  margin-right: 20px;
 }
 
 .app-hero {

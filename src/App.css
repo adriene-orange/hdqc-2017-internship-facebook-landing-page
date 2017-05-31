@@ -2,12 +2,6 @@
   text-align: center;
   font-family: Helvetica; }
 
-.app-header {
-  background-color: #222;
-  width: 100%;
-  height: 50px;
-  color: #ddd; }
-
 .nav {
   margin-left: auto;
   margin-right: auto;
@@ -15,6 +9,12 @@
   background-color: #222;
   height: 100%;
   display: flex; }
+
+.app-header {
+  background-color: #222;
+  width: 100%;
+  height: 50px;
+  color: #ddd; }
 
 .nav-home {
   display: inline-block;

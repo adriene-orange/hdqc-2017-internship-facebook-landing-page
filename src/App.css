@@ -1,9 +1,42 @@
 .App {
   text-align: center; }
 
-.nav {
+.header {
   background-color: #222;
-  height: 50px; }
+  height: 50px;
+  color: white; }
+
+.nav {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex; }
+
+.nav-left {
+  display: inline;
+  flex: 2; }
+
+.nav-logo {
+  color: #00d8ff;
+  display: inline-block; }
+
+.nav-list {
+  display: inline-block; }
+
+.nav-list-item {
+  display: inline-block;
+  margin-left: 10px; }
+
+.nav-form {
+  display: inline-block; }
+
+.nav-search {
+  display: inline-block;
+  margin-left: 10px; }
+
+.nav-right {
+  display: inline;
+  flex: 1; }
 
 .hero {
   height: 300px;

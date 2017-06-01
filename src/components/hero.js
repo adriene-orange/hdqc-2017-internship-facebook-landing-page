@@ -1,7 +1,8 @@
 import React from 'react';
+import './hero.css';
 
 const Hero = () => (
-  <div className="app-hero">
+  <div className="hero">
     Hero
   </div>
 );

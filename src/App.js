@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/header';
 import ContentLeft from './components/contentLeft';
-import ContentRight from './components/contentRight';
+import ContentRight from './components/right_content';
 import Footer from './components/footer';
 
 const App = () => (

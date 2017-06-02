@@ -1,9 +1,8 @@
 import React from 'react';
 import './footer.scss';
 
-const Footer = function() {
+const Footer = () => (
   <div className="footer-languages">
-    <ul></ul>
     <li>English (US)</li>
     <li>Español</li>
     <li>Français (France)</li>
@@ -16,8 +15,6 @@ const Footer = function() {
     <li>हिन्दी</li>
     <li>日本語</li>
   </div>
-
-
-};
+);
 
 export default Footer;

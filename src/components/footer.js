@@ -1,8 +1,8 @@
 import React from 'react';
-import './footer.scss';
+import './footer.css';
 
 const Footer = () => (
-  <div className="footer">
+  <footer className="footer">
     <div className="footer-languages">
       <ul>
         <li>English (US)</li>
@@ -17,7 +17,7 @@ const Footer = () => (
         <li>हिन्दी</li>
         <li>日本語</li>
         <li>
-          <button>+</button>
+          <button className="language-expander">+</button>
         </li>
       </ul>
     </div>
@@ -31,6 +31,13 @@ const Footer = () => (
         <li>Log In</li>
         <li>Marketplace</li>
         <li>Cookies</li>
+      </ul>
+      <ul>
+        <li>Messenger</li>
+        <li>Groups</li>
+        <li>Ad Choices
+          <span className="add-arrow" />
+        </li>
       </ul>
       <ul>
         <li>Facebook Lite</li>
@@ -59,8 +66,10 @@ const Footer = () => (
         <li>Careers</li>
       </ul>
     </div>
-  </div>
 
+    <p className="footer-trademark">Facebook © 2017</p>
+
+  </footer>
 );
 
 export default Footer;

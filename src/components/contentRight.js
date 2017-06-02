@@ -2,10 +2,6 @@ import React from 'react';
 import './contentRight.css';
 
 const RightContent = () => (
-  <div />
-);
-
-const RightContent = () => (
 
   <div className="RightContent">
     <div className="RightHeader">

@@ -1,8 +1,27 @@
 .header {
-  background-color: #1d2129;
+  background-color: #0a569d;
   height: 65px;
+  display: flex;
 }
 
 .logo {
-  display: inline-block;
+  height: 30px;
+  width: 100px;
+}
+
+.button-container {
+  padding: 15px 10px;
+}
+
+.button {
+    background-color: #4267b2;
+    color: white;
+    height: 25px;
+}
+
+.form-text {
+  color: white;
+  margin-right: 15px;
+  font-size: 12px;
+  text-align: left;
 }

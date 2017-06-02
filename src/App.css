@@ -1,2 +1,11 @@
 .App {
   text-align: center; }
+
+.content {
+  display: flex;
+  margin: 0 auto;
+  width: 980px;
+  padding: 20px 0; }
+
+.content-container {
+  background: #edf0f5; }

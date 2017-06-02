@@ -6,8 +6,8 @@ const RightContent = () => (
 
   <div className="RightContent">
     <div className="RightHeader">
-      Sign Up
-      It&apos;s free and always will be.
+      <h1>Sign Up</h1>
+      <h3>It&apos;s free and always will be.</h3>
     </div>
     <div className="FL_Name">
       <input className="First_Form" type="text" name="First" placeholder="First name" />

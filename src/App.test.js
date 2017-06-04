@@ -5,8 +5,11 @@ import { expect } from 'chai';
 
 import App from './App';
 
-it('renders without crashing', () => {
-  const staticMarkup = server.renderToStaticMarkup(<App />);
-  const $ = cheerio.load(staticMarkup);
-  expect($.root().children().first()).to.be.ok;
+describe('App component', () => {
+  it('renders without crashing', () => {
+    console.log('rendering');
+    const staticMarkup = server.renderToStaticMarkup(<App />);
+    const $ = cheerio.load(staticMarkup);
+    expect($.root().children().first()).to.be.ok;
+  });
 });

@@ -14,11 +14,14 @@
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-loader": "7.0.0",
+    "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-preset-react-app": "^3.0.0",
     "babel-runtime": "6.23.0",
     "case-sensitive-paths-webpack-plugin": "2.0.0",
     "chalk": "1.1.3",
+    "cheerio": "^0.22.0",
     "connect-history-api-fallback": "1.3.0",
+    "cross-env": "^5.0.0",
     "cross-spawn": "4.0.2",
     "css-loader": "0.28.1",
     "dotenv": "4.0.0",
@@ -57,11 +60,14 @@
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && node scripts/build.js",
-    "test": "mocha --require babel-core/register --require ./src/App.test.js"
+    "test": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/**/*.test.js --recursive"
   },
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      "css-modules-transform"
     ]
   },
   "eslintConfig": {

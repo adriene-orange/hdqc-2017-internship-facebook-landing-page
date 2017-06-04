@@ -1,8 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import server from 'react-dom/server';
+import cheerio from 'cheerio';
+import { expect } from 'chai';
+
 import App from './App';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  const staticMarkup = server.renderToStaticMarkup(<App />);
+  const $ = cheerio.load(staticMarkup);
+  expect($.root().children().first()).to.be.ok;
 });

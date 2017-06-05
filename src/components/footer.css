@@ -8,6 +8,10 @@
 .footer-languages {
   border-bottom: 1px solid lightgrey; }
 
+.footer-site-map {
+  display: flex;
+  align-items: flex-start; }
+
 .footer-languages li {
   display: inline-block;
   padding-right: 10px; }

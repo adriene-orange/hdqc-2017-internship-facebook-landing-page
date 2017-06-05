@@ -36,7 +36,7 @@ class Radio extends Component {
         />
         <RadioButton
           name="Male"
-          checked={false}
+          checked={this.state.male}
           onClick={event => this.radioHandler(event)}
         />
       </div>

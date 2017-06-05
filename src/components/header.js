@@ -1,5 +1,6 @@
 import React from 'react';
 import './header.css';
+import Button from './button';
 
 const Header = () => (
   <div className="header">
@@ -21,9 +22,12 @@ const Header = () => (
             <input type="text" name="" />
 
           </form>
-          <div className="button-container">
-            <input className="button" type="button" value="Log In" />
-          </div>
+          <Button
+            containerName="button-container"
+            className="button"
+            type="button"
+            value="Log In"
+          />
         </div>
         <a className="forgotAccount" href="https://www.facebook.com/recover/initiate?lwv=110">
             Forgot account?

@@ -61,7 +61,8 @@
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && node scripts/build.js",
-    "test": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/**/*.test.js ./src/*.test.js"
+    "test": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/**/*.test.js ./src/*.test.js",
+    "test-watch": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/**/*.test.js ./src/*.test.js --watch"
   },
   "babel": {
     "presets": [

@@ -1,9 +1,15 @@
+.sign-up {
+  font-size: 36px;
+}
 
 .RightContent{
-  float: right;
-  width: 399px;
-  margin-right: 200px;
+  width: 400px;
   display: inline-block;
+}
+
+.titleSubtext {
+  font-size: 18px;
+  color: #333;
 }
 
 .RightHeader{
@@ -11,23 +17,84 @@
 }
 
 .First_Form{
-  float: left;
-  display: block;
+  display: inline-block;
   background: white;
   border-radius: 5px;
-  width: 190px;
+  width: 185px;
   height: 39px;
+  margin-right: 10px;
   margin-bottom: 10px;
   color: #999;
+  font-size: 18px;
 }
 
 .Second_Form{
   display: block;
   background: white;
   border-radius: 5px;
-  width: 399px;
+  width: 377px;
   height: 39px;
   margin-bottom: 10px;
   color: #999;
+  font-size: 18px;
+}
 
+.First_Form,
+.Second_Form {
+  box-sizing: border-box;
+  padding-left: 10px;
+  border: 1px solid lightgrey;
+}
+
+.RightSecond {
+  text-align: left;
+}
+
+.RightSecond label {
+  margin-right: 20px;
+}
+
+.FL_Name {
+  margin-left: -10px;
+}
+
+.RightSecond select {
+  border: 1px solid lightgrey;
+  height: 30px;
+  font-size: 13px;
+}
+
+.RightSecond a {
+  font-size: 11.5px;
+  padding-left: 10px;
+  display: inline-block;
+  // width: 30%;
+}
+
+.subtext {
+  font-size: 11px;
+  text-align: left;
+  color: #777;
+}
+
+.CreateAccount-button {
+  text-align: left;
+  padding-bottom: 25px;
+  border-bottom: 1px solid lightgray;
+}
+
+.CreateAccount-button input {
+  background-color: #69a74e;
+  color: white;
+  font-size: 20px;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 10px 40px
+}
+
+.CreateaPage {
+  text-align: left;
+  font-size: 14px;
+  color: #666;
 }

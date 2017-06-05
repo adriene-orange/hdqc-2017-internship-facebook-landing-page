@@ -10,6 +10,11 @@
   border-bottom: 1px solid lightgrey;
 }
 
+.footer-site-map {
+  display: flex;
+  align-items: flex-start;
+}
+
 .footer-languages li {
   display: inline-block;
   padding-right: 10px;
@@ -19,10 +24,13 @@
   display: inline-block;
   list-style: none;
   text-align: left;
+
+
 }
 
 .footer-site-map li {
   padding-bottom: 3px;
+
 }
 
 .footer-site-map ul,

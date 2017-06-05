@@ -1,20 +1,35 @@
 .header {
-  background-color: #0a569d;
-  height: 65px;
-  display: flex; }
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  height: 82px;
+  display: flex;
+  justify-content: center; }
 
 .logo {
-  height: 30px;
-  width: 100px; }
+  height: 34px;
+  width: 170px;
+  margin-top: 35px;
+  background-image: url("https://www.facebook.com//rsrc.php/v3/yd/r/aH47aSjq6a4.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: inline-block; }
+
+u {
+  left: -999999px;
+  position: absolute; }
 
 .button-container {
   max-width: 100px;
   margin: 0; }
 
 .button {
-  background-color: #4267b2;
+  background-color: #4267B2;
   color: white;
-  height: 25px; }
+  height: 25px;
+  border: 1px solid #1E2B5C; }
+  .button:hover {
+    background-color: #3b5998;
+    cursor: pointer; }
 
 .form-text {
   color: white;
@@ -22,6 +37,9 @@
   font-size: 12px;
   text-align: left;
   display: inline-block; }
+
+.form-text > input {
+  margin: 5px 0 0 0; }
 
 .loginForm {
   display: flex;
@@ -34,7 +52,11 @@
   width: 407px;
   padding: 5px 0; }
 
+.loginElements {
+  padding-top: 10px; }
+
 .forgotAccount {
   color: #9cb4d8;
   font-size: 12px;
-  text-decoration: none; }
+  text-decoration: none;
+  margin-left: -30px; }

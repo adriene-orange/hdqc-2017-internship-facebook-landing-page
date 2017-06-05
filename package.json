@@ -5,6 +5,7 @@
   "dependencies": {
     "chai": "^3.5.0",
     "enzyme": "^2.8.2",
+    "lodash": "^4.17.4",
     "mocha": "^3.4.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"

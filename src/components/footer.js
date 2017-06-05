@@ -34,6 +34,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="footer-site-map">
+        <span values={colArray1} />
         <FooterMap values={colArray1} />
         <FooterMap values={colArray2} />
         <FooterMap values={colArray3} />

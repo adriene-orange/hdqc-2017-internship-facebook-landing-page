@@ -3,6 +3,14 @@ import * as store from '../data/store';
 
 export const addUser = (username, password) => {
   // todo: dupe check & other validation
+  if (!username) {
+    return Promise.reject('addUser requires a valid username');
+  }
+
+  if (!password) {
+    return Promise.reject('addUser requires a valid password');
+  }
+
   store.users.push({ username, password });
   return Promise.resolve(true);
 };

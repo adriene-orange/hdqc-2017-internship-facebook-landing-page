@@ -5,7 +5,7 @@ const Button = (props) => {
   const { containerName, className, type, value } = props;
   return (
     <div className={containerName}>
-      <input className={className} type={type} value={value} />
+      <button className={className} type={type}>{value}</button>
     </div>
   );
 };

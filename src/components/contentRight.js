@@ -12,13 +12,19 @@ class RightContent extends Component {
       password: '',
       signedUp: false,
       error: '',
+      firstname: '',
+      lastname: '',
+      birthmonth: '',
+      birthday: '',
+      birthyear: '',
+      gender: '',
     };
     this.buttonHandler = this.buttonHandler.bind(this);
-    this.usernameChange = this.usernameChange.bind(this);
-    this.passwordChange = this.passwordChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   buttonHandler() {
+    console.log(this.state);
     const { username, password } = this.state;
     addUser(username, password).then(
       (data) => {
@@ -32,16 +38,9 @@ class RightContent extends Component {
     );
   }
 
-  usernameChange(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
-
-  passwordChange(e) {
-    this.setState({
-      password: e.target.value,
-    });
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   render() {
@@ -67,30 +66,42 @@ class RightContent extends Component {
           <p className="titleSubtext">It&apos;s free and always will be.</p>
         </div>
         <div className="FL_Name">
-          <input className="First_Form" type="text" name="First" placeholder="First name" />
-          <input className="First_Form" type="text" name="Last" placeholder="Last name" />
+          <input
+            className="First_Form"
+            type="text"
+            name="firstname"
+            placeholder="First name"
+            onChange={e => this.handleChange(e)}
+          />
+          <input
+            className="First_Form"
+            type="text"
+            name="lastname"
+            placeholder="Last name"
+            onChange={e => this.handleChange(e)}
+          />
         </div>
         <div className="Account_Form">
           <input
             className="Second_Form"
             type="username"
-            name="Account"
+            name="username"
             placeholder="Username"
-            onChange={e => this.usernameChange(e)}
+            onChange={e => this.handleChange(e)}
           />
           <input
             className="Second_Form"
             type="password"
             name="password"
             placeholder="New password"
-            onChange={e => this.passwordChange(e)}
+            onChange={e => this.handleChange(e)}
           />
         </div>
 
         <div className="RightSecond">
           <p>Birthday</p>
           <div>
-            <select name="Month">
+            <select name="birthmonth" onChange={e => this.handleChange(e)}>
               <option value="Month">Month</option>
               <option value="Jan">Jan</option>
               <option value="Feb">Feb</option>
@@ -105,7 +116,7 @@ class RightContent extends Component {
               <option value="Nov">Nov</option>
               <option value="Dec">Dec</option>
             </select>
-            <select name="Day">
+            <select name="birthday" onChange={e => this.handleChange(e)}>
               <option value="Day">Day</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -120,7 +131,7 @@ class RightContent extends Component {
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <select name="Year">
+            <select name="birthyear" onChange={e => this.handleChange(e)}>
               <option value="Year">Year</option>
               <option value="2017">2017</option>
               <option value="2016">2016</option>
@@ -140,7 +151,7 @@ class RightContent extends Component {
             </a>
           </div>
           <br />
-          <Radio />
+          <Radio handleChange={this.handleChange} />
         </div>
         <div className="subtext">
           <p>

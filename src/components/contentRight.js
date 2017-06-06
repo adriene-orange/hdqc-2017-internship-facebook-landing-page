@@ -45,6 +45,21 @@ class RightContent extends Component {
   }
 
   render() {
+    const banner = () => {
+      if (this.state.signedUp) {
+        return (
+          <SignUpSuccess />
+        );
+      } else if (this.state.error !== '') {
+        return (
+          <SignUpFailure error={this.state.error} />
+        );
+      }
+      return (
+        <div />
+      );
+    };
+
     return (
       <div className="RightContent">
         <div className="RightHeader">
@@ -144,27 +159,39 @@ class RightContent extends Component {
           <p><a href="">Create a Page</a> for a celebrity, band or business.</p>
         </div>
 
-        <div className="response-banner">
-          {
-            this.state.signedUp ?
-              <SignInSuccess /> :
-              <SignInFailure error={this.state.error} />
-          }
+        <div>
+          { banner() }
         </div>
       </div>
     );
   }
 }
 
-const SignInSuccess = () => (
-  <div>Created Account Successfully</div>
+const bannerStyle = {
+  borderRadius: '10px',
+  height: '30px',
+  color: 'white',
+  textAlign: 'center',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
+const SignUpSuccess = () => (
+  <div className="response-banner" style={{ ...bannerStyle, backgroundColor: 'green' }}>Created account successfully</div>
 );
 
-const SignInFailure = props => (
-  <div>{props.error}</div>
+
+const SignUpFailure = props => (
+  <div
+    className="response-banner"
+    style={{ ...bannerStyle, backgroundColor: 'salmon' }}
+  >
+    {props.error}
+  </div>
 );
 
-SignInFailure.propTypes = {
+SignUpFailure.propTypes = {
   error: PropTypes.string.isRequired,
 };
 

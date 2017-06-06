@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Label from './label';
 
 // function getInitialState() {
 //   return {
@@ -46,17 +47,6 @@ class Radio extends Component {
 
 // let radioState = '';
 
-const Label = (props) => {
-  const {
-    htmlFor,
-    ...otherProps
-  } = props;
-
-  return (
-    <label htmlFor={htmlFor} {...otherProps} />
-  );
-};
-
 const RadioButton = (props) => {
   const { name, onClick, checked } = props;
   if (checked) {
@@ -85,10 +75,6 @@ RadioButton.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   checked: PropTypes.bool.isRequired,
-};
-
-Label.propTypes = {
-  htmlFor: PropTypes.string.isRequired,
 };
 
 export default Radio;

@@ -20,6 +20,8 @@ Button.propTypes = {
 Button.defaultProps = {
   containerName: '',
   type: '',
+  className: '',
+  value: '',
 };
 
 export default Button;

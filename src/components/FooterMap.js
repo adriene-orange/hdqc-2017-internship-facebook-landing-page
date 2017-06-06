@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
+import shortid from 'shortid';
 
 const FooterMap = (props) => {
   const mapArray = props.values.map(item => (
-    <li>{item}</li>
+    <li key={shortid.generate()}>{item}</li>
   ));
 
   return (
@@ -13,7 +14,11 @@ const FooterMap = (props) => {
 };
 
 FooterMap.propTypes = {
-  values: PropTypes.arrayOf.isRequired,
+  values: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+FooterMap.defaultProps = {
+  values: [],
 };
 
 export default FooterMap;

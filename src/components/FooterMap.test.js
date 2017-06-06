@@ -12,12 +12,9 @@ describe('FooterMap component', () => {
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().first()).to.be.ok;
   });
-  it('List items have ids', () => {
+  it('Finds ul in file', () => {
     const staticMarkup = server.renderToStaticMarkup(<FooterMap />);
     const $ = cheerio.load(staticMarkup);
-    expect($('.footer-site-map').find('li').attr('key'));
-    console.log($.root().children().find('ul').children()
-    .toString());
-    // expect($('li')
+    expect($.root().children()).to.be.ok;
   });
 });

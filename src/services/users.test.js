@@ -44,6 +44,16 @@ describe('addUser', () => {
         },
       );
     });
+    it('fails if the user exists', (done) => {
+      const existingUsername = { username: 'hdqc', password: 'whatever' };
+      serviceToTest.addUser(existingUsername.username, existingUsername.password)
+      .catch(
+        (error) => {
+          expect(error).to.deep.equal('username already exists');
+          done();
+        },
+      );
+    });
   });
 });
 

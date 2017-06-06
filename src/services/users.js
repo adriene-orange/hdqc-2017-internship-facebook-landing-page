@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import * as store from '../data/store';
 
+const getUserByUsername = username => _.find(store.users, user => user.username === username);
+
 export const addUser = (username, password) => {
   // todo: dupe check & other validation
   if (!username) {
@@ -9,6 +11,10 @@ export const addUser = (username, password) => {
 
   if (!password) {
     return Promise.reject('addUser requires a valid password');
+  }
+
+  if (getUserByUsername(username)) {
+    return Promise.reject('username already exists');
   }
 
   store.users.push({ username, password });

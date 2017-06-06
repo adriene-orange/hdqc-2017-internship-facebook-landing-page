@@ -18,7 +18,11 @@ class Radio extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{
+        fontSize: '18px',
+        display: 'flex',
+        marginLeft: '6px' }}
+      >
         <RadioButton
           name="Female"
           checked={this.state.selected === 'Female'}
@@ -39,7 +43,7 @@ const RadioButton = (props) => {
   return (
     <div>
       <Label htmlFor={name}>
-        <input type="radio" name={name} value={name} onClick={onClick} checked={checked} />
+        <input type="radio" name={name} value={name} onClick={onClick} checked={checked} style={{ marginRight: '6px' }} />
         {name}
       </Label>
     </div>

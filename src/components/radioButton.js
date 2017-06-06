@@ -1,30 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import Label from './label';
 
-// function getInitialState() {
-//   return {
-//     selectedOption: 'option1',
-//   };
-// }
-
 class Radio extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      female: false,
-      male: false,
+      selected: '',
     };
     this.radioHandler = this.radioHandler.bind(this);
   }
 
   radioHandler(event) {
-    console.log(event.target.name);
-    const name = event.target.name;
-    if (name === 'Female') {
-      this.setState({ female: true, male: false });
-    } else if (name === 'Male') {
-      this.setState({ female: false, male: true });
-    }
+    this.setState({
+      selected: event.target.name,
+    });
   }
 
   render() {
@@ -32,43 +21,29 @@ class Radio extends Component {
       <div>
         <RadioButton
           name="Female"
-          checked={this.state.female}
-          onClick={event => this.radioHandler(event)}
+          checked={this.state.selected === 'Female'}
+          onClick={this.radioHandler}
         />
         <RadioButton
           name="Male"
-          checked={this.state.male}
-          onClick={event => this.radioHandler(event)}
+          checked={this.state.selected === 'Male'}
+          onClick={this.radioHandler}
         />
       </div>
     );
   }
 }
 
-// let radioState = '';
-
 const RadioButton = (props) => {
   const { name, onClick, checked } = props;
-  if (checked) {
-    return (
-      <div>
-        <Label htmlFor={name}>
-          <input type="radio" name={name} value={name} onClick={onClick} checked />
-          {name}
-        </Label>
-      </div>
-    );
-  } else if (!checked) {
-    return (
-      <div>
-        <Label htmlFor={name}>
-          <input type="radio" name={name} value={name} onClick={onClick} />
-          {name}
-        </Label>
-      </div>
-    );
-  }
-  return null;
+  return (
+    <div>
+      <Label htmlFor={name}>
+        <input type="radio" name={name} value={name} onClick={onClick} checked={checked} />
+        {name}
+      </Label>
+    </div>
+  );
 };
 
 RadioButton.propTypes = {

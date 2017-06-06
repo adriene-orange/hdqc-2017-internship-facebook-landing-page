@@ -11,6 +11,7 @@ class Login extends Component {
       username: '',
       password: '',
       message: '',
+      errorStyle: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,10 +29,10 @@ class Login extends Component {
     });
   }
 
-  loginResult(resultMessage) {
-    console.log('Hey!');
+  loginResult(resultMessage, errorStyling) {
     this.setState({
       message: resultMessage,
+      errorStyle: errorStyling,
     });
   }
 
@@ -40,11 +41,9 @@ class Login extends Component {
     console.log(`A login attempt was made ${this.state.username} ${this.state.password}`);
     getUserByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
-      console.log('Login successful');
-      this.loginResult('Login successful');
-    }, () => {
-      console.log('Login Failed');
-      this.loginResult('Login Failed');
+      this.loginResult('', '');
+    }, (error) => {
+      this.loginResult(error, 'error-style');
     });
   }
 
@@ -53,21 +52,22 @@ class Login extends Component {
       <div className="loginElements">
         <div className="loginItems">
           <form className="form-text" onSubmit={this.handleClick} >
-
-            <span>Email or Phone</span> <br />
-            <input
-              type="text"
-              name="username"
-              onChange={this.handleChange}
-            />
-
-            <span>Password</span> <br />
-            <input
-              type="text"
-              name="password"
-              onChange={this.handleChange}
-            />
-
+            <div className="input-form">
+              <span>Email or Phone</span> <br />
+              <input
+                type="text"
+                name="username"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="input-form">
+              <span>Password</span> <br />
+              <input
+                type="text"
+                name="password"
+                onChange={this.handleChange}
+              />
+            </div>
             <Button
               containerName="button-container"
               className="button"
@@ -80,7 +80,10 @@ class Login extends Component {
             Forgot account?
         </a>
         <div className="login-message">
-          <LoginMessage message={this.state.message} />
+          <LoginMessage
+            message={this.state.message}
+            errorStyle={this.state.errorStyle}
+          />
         </div>
       </div>
     );

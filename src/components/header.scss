@@ -9,7 +9,7 @@
 .logo {
   height: 34px;
   width: 170px;
-  margin-top: 35px;
+  margin-top: 30px;
   background-image: url("https://www.facebook.com//rsrc.php/v3/yd/r/aH47aSjq6a4.png");
   background-repeat: no-repeat;
   background-size: auto;
@@ -23,6 +23,8 @@ u {
 }
 
 .button-container {
+  display: inline-block;
+  padding-left: 10px;
   max-width: 100px;
   margin: 0;
 }
@@ -30,7 +32,7 @@ u {
 .button {
     background-color: #4267B2;
     color: white;
-    height: 25px;
+    height: 23px;
     border: 1px solid #1E2B5C;
     &:hover {
       background-color: #3b5998;
@@ -43,7 +45,15 @@ u {
   margin-right: 15px;
   font-size: 12px;
   text-align: left;
+  width: 100%;
+
+}
+.input-form{
   display: inline-block;
+}
+
+.input-form + .input-form{
+  padding-left: 10px;
 
 }
 
@@ -73,4 +83,14 @@ u {
   font-size: 12px;
   text-decoration: none;
   margin-left: -30px;
+  display: block;
+}
+
+.error-style {
+  background-color: red;
+  // width: 100px;
+  // height: 25px;
+  padding: 10px;
+  line-height: 25px;
+  display: inline-block;
 }

@@ -1,17 +1,19 @@
 import React, { PropTypes } from 'react';
 
 const LoginMessage = (props) => {
-  const a = props.message;
+  const { message, errorStyle } = props;
   return (
-    <p>{a}</p>
+    <p className={errorStyle}>{message}</p>
   );
 };
 
 LoginMessage.propTypes = {
   message: PropTypes.string.isRequired,
+  errorStyle: PropTypes.string.isRequired,
 };
 
 LoginMessage.defaultProps = {
   message: '',
+  errorStyle: '',
 };
 export default LoginMessage;

@@ -12,4 +12,10 @@ describe('Button component', () => {
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().first()).to.be.ok;
   });
+  it('Finds a button in the file', () => {
+    const staticMarkup = server.renderToStaticMarkup(<Button />);
+    const $ = cheerio.load(staticMarkup);
+    // console.log($.root().children().toString());
+    expect($.root().children()).to.be.ok;
+  });
 });

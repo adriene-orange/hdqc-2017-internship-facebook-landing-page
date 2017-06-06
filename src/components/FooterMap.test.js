@@ -12,9 +12,16 @@ describe('FooterMap component', () => {
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().first()).to.be.ok;
   });
+
   it('renders one ul tag', () => {
     const staticMarkup = server.renderToStaticMarkup(<FooterMap />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().find('ul').length).to.equal(1);
+  });
+
+  it('Finds ul in file', () => {
+    const staticMarkup = server.renderToStaticMarkup(<FooterMap />);
+    const $ = cheerio.load(staticMarkup);
+    expect($.root().children()).to.be.ok;
   });
 });

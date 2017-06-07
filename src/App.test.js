@@ -3,14 +3,15 @@ import React from 'react';
 import server from 'react-dom/server';
 import cheerio from 'cheerio';
 import { expect } from 'chai';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 // Components
 import App from './App';
 import Landing from './components/landing';
+import Home from './components/home';
 
 describe('App component', () => {
-  const wrapper = mount(<App />);
+  const wrapper = shallow(<App />);
 
   it('renders without crashing', () => {
     const staticMarkup = server.renderToStaticMarkup(<App />);
@@ -24,6 +25,6 @@ describe('App component', () => {
 
   it('renders success message when state is set to true', () => {
     wrapper.setState({ authenticated: true });
-    expect(wrapper.find('h1')).to.have.length(1);
+    expect(wrapper.find(Home)).to.have.length(1);
   });
 });

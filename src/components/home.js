@@ -3,6 +3,7 @@ import './home.css';
 import List from './list';
 import Detail from './detail';
 import Header from './header';
+import * as store from '../data/store';
 
 class Home extends Component {
   constructor(props) {
@@ -19,12 +20,13 @@ class Home extends Component {
     });
   }
   render() {
+    console.log(store);
     return (
       <div>
         <Header styleSheet="home-header" />
         <div className="home">
-          <List func={this.getValue} />
-          <Detail value={this.state.value} />
+          <List func={this.getValue} store={store} />
+          <Detail value={this.state.value} store={store} />
         </div>
       </div>
     );

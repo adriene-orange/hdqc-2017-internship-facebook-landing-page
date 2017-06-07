@@ -22,6 +22,6 @@ describe('Header component', () => {
     const staticMarkup = server.renderToStaticMarkup(<Header />);
     const $ = cheerio.load(staticMarkup);
     // console.log($);
-    expect($.root().children().find('form').length).to.equal(2);
+    expect($.root().children().find('form').length).to.equal(1);
   });
 });

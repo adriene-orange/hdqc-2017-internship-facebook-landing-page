@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './home.css';
 import List from './list';
 import Detail from './detail';
+import Header from './header';
 
 class Home extends Component {
   constructor(props) {
@@ -19,9 +20,12 @@ class Home extends Component {
   }
   render() {
     return (
-      <div className="home">
-        <List func={this.getValue} />
-        <Detail value={this.state.value} />
+      <div>
+        <Header />
+        <div className="home">
+          <List func={this.getValue} />
+          <Detail value={this.state.value} />
+        </div>
       </div>
     );
   }

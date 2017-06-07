@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import shortid from 'shortid';
+import * as store from '../data/store';
 
 class ListItems extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      values: ['Art', 'Books', 'Cats', 'Dogs', 'Elephants', 'Ferraris', 'Golf', 'Hopscotch', 'Igloos', 'Jalapenos', 'Knights', 'Loosely Tied Knots'],
+      values: [],
       selected: '',
     };
     this.selectHandler = this.selectHandler.bind(this);
@@ -16,9 +17,8 @@ class ListItems extends Component {
     // console.log(this.state.selected);
     this.props.func(event);
   }
-
   render() {
-    const mapArray = this.state.values.map(item => (
+    const mapArray = store.interests.map(item => (
       <li key={shortid.generate()}>
         <a
           role="button"

@@ -6,7 +6,7 @@ import Footer from './footer';
 
 const Landing = props => (
   <div className="App">
-    <Header appLogin={props.appLogin} />
+    <Header appLogin={props.appLogin} styleSheet=".home-header" />
     <div className="content-container">
       <div className="content">
         <ContentLeft />

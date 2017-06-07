@@ -10,13 +10,14 @@ const Header = props => (
           <u>facebook</u>
         </a>
       </div>
-      <Login appLogin={props.appLogin} />
+      <Login appLogin={props.appLogin} styleSheet={props.styleSheet} />
     </div>
   </div>
 );
 
 Header.propTypes = {
   appLogin: PropTypes.func.isRequired,
+  styleSheet: PropTypes.string.isRequired,
 };
 
 export default Header;

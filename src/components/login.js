@@ -48,7 +48,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="loginElements">
+      <div className={this.props.styleSheet}>
         <div className="loginItems">
           <form className="form-text" onSubmit={this.handleClick} >
             <div className="input-form">
@@ -91,6 +91,7 @@ class Login extends Component {
 
 Login.propTypes = {
   appLogin: PropTypes.func.isRequired,
+  styleSheet: PropTypes.string.isRequired,
 };
 
 export default Login;

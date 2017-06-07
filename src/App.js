@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Header from './components/header';
-import ContentLeft from './components/contentLeft';
-import RightContent from './components/contentRight';
-import Footer from './components/footer';
+import Landing from './components/landing';
 
-const App = () => (
-  <div className="App">
-    <Header />
-    <div className="content-container">
-      <div className="content">
-        <ContentLeft />
-        <RightContent />
-      </div>
-    </div>
-    <Footer />
-  </div>
-);
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      authenticated: false,
+    };
+    this.appLogin = this.appLogin.bind(this);
+  }
+
+  appLogin(authenticated) {
+    this.setState({
+      authenticated,
+    });
+  }
+
+  render() {
+    if (this.state.authenticated) {
+      return (<h1>Success!</h1>);
+    }
+    return (
+      <Landing appLogin={this.appLogin} />
+    );
+  }
+}
 
 export default App;

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './header.css';
 import Login from './login';
 
-const Header = () => (
+const Header = props => (
   <div className="header">
     <div className="loginForm">
       <div className="logo" >
@@ -10,9 +10,13 @@ const Header = () => (
           <u>facebook</u>
         </a>
       </div>
-      <Login />
+      <Login appLogin={props.appLogin} />
     </div>
   </div>
 );
+
+Header.propTypes = {
+  appLogin: PropTypes.func.isRequired,
+};
 
 export default Header;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { getUserByUsernameAndPassword } from '../services/users';
 import './header.css';
 import Button from './button';
@@ -20,9 +20,7 @@ class Login extends Component {
   }
 
   handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    const { name, value } = event.target;
 
     this.setState({
       [name]: value,
@@ -42,6 +40,7 @@ class Login extends Component {
     getUserByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
       this.loginResult('', '');
+      this.props.appLogin(true);
     }, (error) => {
       this.loginResult(error, 'error-style');
     });
@@ -89,5 +88,9 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  appLogin: PropTypes.func.isRequired,
+};
 
 export default Login;

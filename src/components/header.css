@@ -70,6 +70,9 @@ u {
   margin-left: -30px;
   display: block; }
 
+.home-header {
+  display: none; }
+
 .error-style {
   background-color: red;
   padding: 10px;

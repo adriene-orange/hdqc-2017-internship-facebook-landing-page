@@ -7,7 +7,9 @@ const Detail = (props) => {
 
   return (
     <div className="detail">
-      <p>You picked {value}</p>
+      <div className="detail-header" >
+        {value}
+      </div>
     </div>
   );
 };

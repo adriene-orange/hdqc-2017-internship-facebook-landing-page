@@ -21,7 +21,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header styleSheet="home-header" />
         <div className="home">
           <List func={this.getValue} />
           <Detail value={this.state.value} />

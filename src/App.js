@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from './components/landing';
+import Home from './components/home';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
 
   render() {
     if (this.state.authenticated) {
-      return (<h1>Success!</h1>);
+      return (<Home />);
     }
     return (
       <Landing appLogin={this.appLogin} />

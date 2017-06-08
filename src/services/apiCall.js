@@ -21,7 +21,7 @@ export const apiCall = (title) => {
 };
 
 export const imageCall = (file) => {
-  const apiUrl = `${commonsUrl}?action=query&origin=*&titles=${file}&prop=imageinfo&iiprop=url`;
+  const apiUrl = `${commonsUrl}?action=query&origin=*&titles=${file}&prop=imageinfo&iiprop=url&format=json`;
   return fetch(apiUrl)
     .then((response) => {
       if (response.status >= 400) {

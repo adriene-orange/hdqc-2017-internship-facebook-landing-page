@@ -4,6 +4,7 @@ import List from './list';
 import Detail from './detail';
 import Header from './header';
 import Footer from './footer';
+import * as store from '../data/store';
 
 class Home extends Component {
   constructor(props) {
@@ -20,12 +21,13 @@ class Home extends Component {
     });
   }
   render() {
+    console.log(store);
     return (
       <div>
         <Header auth={this.props.auth} appLogin={this.props.appLogin} />
         <div className="home">
-          <List func={this.getValue} />
-          <Detail value={this.state.value} />
+          <List func={this.getValue} store={store} />
+          <Detail value={this.state.value} store={store} />
         </div>
         <Footer />
       </div>

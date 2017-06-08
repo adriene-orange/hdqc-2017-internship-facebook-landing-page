@@ -12,9 +12,6 @@ class Logout extends Component {
   handleClick() {
     console.log(this.props.appLogin);
     this.props.appLogin(false);
-    this.setState({
-      clicked: true,
-    });
   }
   render() {
     return (

@@ -9,19 +9,50 @@ import Detail from './detail';
 
 describe('Detail', () => {
   it('renders without crashing', () => {
-    const staticMarkup = server.renderToStaticMarkup(<Detail value="test" source={{ interests: [] }} />);
+    const staticMarkup = server.renderToStaticMarkup(<Detail
+      value="test"
+      store={{ interests: [] }}
+    />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().first()).to.be.ok;
   });
 
   it('renders current selection', () => {
-    const staticMarkup = server.renderToStaticMarkup(<Detail value="test" source={{ interests: [] }} />);
+    const staticMarkup = server.renderToStaticMarkup(
+      <Detail
+        value="test"
+        store={{ interests: [] }}
+      />);
     const $ = cheerio.load(staticMarkup);
-    expect($.root().children().find('p').text()).contains('test');
+    expect($.root().children().find('.detail-header').text()).contains('test');
   });
 
-  it('renders an image', () => {
-    const staticMarkup = server.renderToStaticMarkup(<Detail value="test" source={{ interests: [] }} />);
+  it('renders selection\'s image src attribute', () => {
+    const staticMarkup = server.renderToStaticMarkup(
+      <Detail
+        value="test"
+        store={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
+      />);
+    const $ = cheerio.load(staticMarkup);
+    expect($.root().children().find('img').attr('src')).contains('google');
+  });
+
+  it('renders an image when a selection is made', () => {
+    const staticMarkup = server.renderToStaticMarkup(
+      <Detail
+        value="test"
+        store={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
+      />);
+    const $ = cheerio.load(staticMarkup);
+    expect($.root().children().find('img').length).to.equal(1);
+  });
+
+  it('does not render an image if no selection is made', () => {
+    const staticMarkup = server.renderToStaticMarkup(
+      <Detail
+        value="test"
+        store={{ interests: [] }}
+      />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().find('img').length).to.equal(0);
   });

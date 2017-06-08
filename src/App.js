@@ -20,10 +20,10 @@ class App extends Component {
 
   render() {
     if (this.state.authenticated) {
-      return (<Home />);
+      return (<Home auth={this.state.authenticated} appLogin={this.appLogin} />);
     }
     return (
-      <Landing appLogin={this.appLogin} />
+      <Landing appLogin={this.appLogin} auth={this.state.authenticated} />
     );
   }
 }

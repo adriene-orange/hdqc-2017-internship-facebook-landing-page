@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import shortid from 'shortid';
+import './listItems.css';
+
 
 class ListItems extends Component {
   constructor(props) {

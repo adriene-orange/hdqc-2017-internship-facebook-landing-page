@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './home.css';
 import List from './list';
 import Detail from './detail';
 import Header from './header';
+import Footer from './footer';
 import * as store from '../data/store';
 
 class Home extends Component {
@@ -23,15 +24,20 @@ class Home extends Component {
     console.log(store);
     return (
       <div>
-        <Header styleSheet="home-header" />
+        <Header auth={this.props.auth} appLogin={this.props.appLogin} />
         <div className="home">
           <List func={this.getValue} store={store} />
           <Detail value={this.state.value} store={store} />
         </div>
+        <Footer />
       </div>
     );
   }
 }
 
+Home.propTypes = {
+  auth: PropTypes.bool.isRequired,
+  appLogin: PropTypes.func.isRequired,
+};
 
 export default Home;

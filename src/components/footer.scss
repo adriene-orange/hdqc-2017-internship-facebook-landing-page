@@ -1,4 +1,10 @@
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  // margin-left: -500px;
+  // transform: translateX(-50%)
+  // transform: translate(-50%, 0);
   font-size: 12px;
   color: #365899;
   text-align: start;

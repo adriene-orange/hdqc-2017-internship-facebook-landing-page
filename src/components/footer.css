@@ -1,4 +1,7 @@
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
   font-size: 12px;
   color: #365899;
   text-align: start;

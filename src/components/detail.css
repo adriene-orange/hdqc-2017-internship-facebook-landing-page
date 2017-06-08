@@ -1,8 +1,7 @@
 .detail {
+  flex-grow: 6;
   color: black;
-  display: inline-block;
   text-align: left;
-  width: 300px;
   margin-right: 100px;
   margin-top: 50px;
   border: solid black 1px; }
@@ -11,8 +10,8 @@
   background-color: #3b5998;
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
   height: 50px;
-  width: 300px;
   line-height: 50px;
   font-size: 20px;
   text-align: center;
-  color: #FDFEFE; }
+  color: #FDFEFE;
+  margin-top: 0; }

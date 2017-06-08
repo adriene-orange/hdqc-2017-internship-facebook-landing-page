@@ -1,2 +1,12 @@
 .logout {
-  color: black; }
+  background-color: #4267B2;
+  color: white;
+  height: 23px;
+  border: 1px solid #1E2B5C; }
+  .logout:hover {
+    background-color: #3b5998;
+    cursor: pointer; }
+
+.buttonContainer {
+  display: flex;
+  align-items: center; }

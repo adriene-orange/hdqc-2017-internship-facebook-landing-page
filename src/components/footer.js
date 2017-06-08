@@ -14,42 +14,44 @@ const Footer = () => {
   const colArray8 = ['Places', 'Create Page'];
   const colArray9 = ['Locations', 'Careers'];
   return (
-    <footer className="footer">
-      <div className="footer-languages">
-        <ul>
-          <li>English (US)</li>
-          <li>Español</li>
-          <li>Français (France)</li>
-          <li>中文(简体)</li>
-          <li>العربية</li>
-          <li>Português (Brasil)</li>
-          <li>Italiano</li>
-          <li>Deutsch</li>
-          <li>한국어</li>
-          <li>हिन्दी</li>
-          <li>日本語</li>
-          <li>
-            <Button className="language-expander" value="+" />
-          </li>
-        </ul>
-      </div>
-      <div className="footer-site-map">
-        <span values={colArray1} />
-        <FooterMap values={colArray1} />
-        <FooterMap values={colArray2} />
-        <FooterMap values={colArray3} />
-        <FooterMap values={colArray4} />
-        <FooterMap values={colArray5} />
-        <FooterMap values={colArray6} />
-        <FooterMap values={colArray7} />
-        <FooterMap values={colArray8} />
-        <FooterMap values={colArray9} />
+    <div className="footer-wrapper">
+      <footer className="footer">
+        <div className="footer-languages">
+          <ul>
+            <li>English (US)</li>
+            <li>Español</li>
+            <li>Français (France)</li>
+            <li>中文(简体)</li>
+            <li>العربية</li>
+            <li>Português (Brasil)</li>
+            <li>Italiano</li>
+            <li>Deutsch</li>
+            <li>한국어</li>
+            <li>हिन्दी</li>
+            <li>日本語</li>
+            <li>
+              <Button className="language-expander" value="+" />
+            </li>
+          </ul>
+        </div>
+        <div className="footer-site-map">
+          <span values={colArray1} />
+          <FooterMap values={colArray1} />
+          <FooterMap values={colArray2} />
+          <FooterMap values={colArray3} />
+          <FooterMap values={colArray4} />
+          <FooterMap values={colArray5} />
+          <FooterMap values={colArray6} />
+          <FooterMap values={colArray7} />
+          <FooterMap values={colArray8} />
+          <FooterMap values={colArray9} />
 
-      </div>
+        </div>
 
-      <p className="footer-trademark">Facebook © 2017</p>
+        <p className="footer-trademark">Facebook © 2017</p>
 
-    </footer>);
+      </footer>
+    </div>);
 };
 
 export default Footer;

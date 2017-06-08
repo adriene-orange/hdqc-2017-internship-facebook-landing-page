@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import shortid from 'shortid';
 import * as store from '../data/store';
+import './listItems.css';
 
 class ListItems extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class ListItems extends Component {
   }
   render() {
     const mapArray = store.interests.map(item => (
-      <li key={shortid.generate()}>
+      <li key={shortid.generate()} className="list-items">
         <a
           role="button"
           tabIndex="-1"

@@ -1,21 +1,21 @@
 import React, { PropTypes } from 'react';
 import './detail.css';
+// import DetailWrapper from './detailWrapper';
 
 const Detail = (props) => {
-  const { value, store } = props;
+  const { value, store, result } = props;
   const matchedValue = store.interests.filter(item => value === item.subject);
 
+  console.log('results', result);
+
   if (matchedValue.length === 1) {
-    const { image, ref } = matchedValue[0];
+    // const { image, ref } = matchedValue[0];
+    console.log('las;kjfls;akfjsl;kadfjl;');
     return (
       <div className="detail">
         <p className="detail-header" >
           {value}
         </p>
-        <div>
-          <img src={image} alt={value} style={{ maxHeight: '100px' }} />
-        </div>
-        <a href={ref} rel="noopener noreferrer" target="_blank">More Info</a>
       </div>
     );
   }
@@ -31,6 +31,7 @@ const Detail = (props) => {
 Detail.propTypes = {
   value: PropTypes.string.isRequired,
   store: PropTypes.arrayOf(PropTypes.object).isRequired,
+  result: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default Detail;

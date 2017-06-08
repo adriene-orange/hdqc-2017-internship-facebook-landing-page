@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import './home.css';
 import List from './list';
-import Detail from './detail';
+import DetailWrapper from './detailWrapper';
 import Header from './header';
 import Footer from './footer';
 import * as store from '../data/store';
@@ -21,13 +21,13 @@ class Home extends Component {
     });
   }
   render() {
-    console.log(store);
+    console.log('Home value', this.state.value);
     return (
       <div>
         <Header auth={this.props.auth} appLogin={this.props.appLogin} />
         <div className="home">
           <List func={this.getValue} store={store} />
-          <Detail value={this.state.value} store={store} />
+          <DetailWrapper value={this.state.value} store={store} />
         </div>
         <Footer />
       </div>

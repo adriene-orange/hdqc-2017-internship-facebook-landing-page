@@ -12,7 +12,7 @@ class DetailWrapper extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    return Promise.resolve(apiCall(nextProps.value)).then(result => this.setState({ result }));
+    return apiCall(nextProps.value).then(result => this.setState({ result }));
   }
 
   render() {

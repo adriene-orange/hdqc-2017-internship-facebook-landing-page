@@ -53,12 +53,12 @@ u {
 .loginForm {
   display: flex;
   margin: 0 auto;
-  width: 1200px; }
+  width: 1000px; }
 
 .loginItems {
   display: flex;
   align-items: flex-end;
-  margin-left: 400px;
+  margin-left: 380px;
   width: 407px;
   padding: 5px 0; }
 

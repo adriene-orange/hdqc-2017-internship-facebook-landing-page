@@ -15,13 +15,11 @@ class Home extends Component {
     this.getValue = this.getValue.bind(this);
   }
   getValue(event) {
-    console.log(event.target.innerHTML);
     this.setState({
       value: event.target.innerHTML,
     });
   }
   render() {
-    console.log(store);
     return (
       <div>
         <Header username={this.props.username} fetchUsername={this.props.fetchUsername} />

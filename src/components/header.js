@@ -25,11 +25,11 @@ const Header = (props) => {
 
 Header.propTypes = {
   fetchUsername: PropTypes.func.isRequired,
-  username: PropTypes.bool.isRequired,
+  username: PropTypes.string.isRequired,
 };
 
 Header.defaultProps = {
-  username: false,
+  username: '',
 };
 
 export default Header;

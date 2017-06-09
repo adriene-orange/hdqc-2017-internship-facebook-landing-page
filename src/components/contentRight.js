@@ -24,16 +24,13 @@ class ContentRight extends Component {
   }
 
   buttonHandler() {
-    console.log(this.state);
     const { username, password, firstname, lastname,
       gender, birthmonth, birthday, birthyear } = this.state;
     addUser(username, password, firstname, lastname, gender, birthmonth, birthday, birthyear).then(
       (data) => {
-        console.log(data);
         this.setState({ signedUp: data });
       },
       (error) => {
-        console.log(error);
         this.setState({ error, signedUp: false });
       },
     );

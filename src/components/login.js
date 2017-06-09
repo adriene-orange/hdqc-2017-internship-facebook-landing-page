@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { fetchUsernameByUsernameAndPassword } from '../services/users';
+import { getUserByUsernameAndPassword } from '../services/users';
 import './header.css';
 import Button from './button';
 import LoginMessage from './loginMessage';
@@ -36,8 +36,7 @@ class Login extends Component {
 
   handleClick(event) {
     event.preventDefault();
-    console.log(`A login attempt was made ${this.state.username} ${this.state.password}`);
-    fetchUsernameByUsernameAndPassword(this.state.username, this.state.password)
+    getUserByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
       this.loginResult('', '');
       this.props.fetchUsername(this.state.username);

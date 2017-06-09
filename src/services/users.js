@@ -37,3 +37,7 @@ export const getUserByUsernameAndPassword = (username, password) => {
   );
   return (user) ? Promise.resolve(user) : Promise.reject('User not found');
 };
+
+export const getUserByName = username => (_.find(store.users, existingUser =>
+    existingUser.username === username)
+  );

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import './logout.css';
+import { getUserByName } from '../services/users';
 
 class Logout extends Component {
   constructor(props) {
@@ -13,9 +14,10 @@ class Logout extends Component {
     this.props.fetchUsername(false);
   }
   render() {
+    const userName = getUserByName(this.props.username);
     return (
       <div className="buttonContainer">
-        <p className="username">Hello {this.props.username}</p>
+        <p className="username">Hello {userName.firstname} {userName.lastname}</p>
         <button className="logout" onClick={this.handleClick}>Log Out</button>
       </div>
     );

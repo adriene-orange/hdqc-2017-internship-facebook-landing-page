@@ -2,6 +2,8 @@ export const users = [
   {
     username: 'hdqc',
     password: 'hdqc',
+    firstname: 'hello',
+    lastname: 'there',
   },
 ];
 

@@ -24,7 +24,7 @@ describe('App component', () => {
   });
 
   it('renders success message when state is set to true', () => {
-    wrapper.setState({ authenticated: true });
+    wrapper.setState({ username: 'bob' });
     expect(wrapper.find(Home)).to.have.length(1);
   });
 });

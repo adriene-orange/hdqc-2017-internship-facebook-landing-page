@@ -4,7 +4,7 @@ import { addUser } from '../services/users';
 
 import Radio from './radioButton';
 
-class RightContent extends Component {
+class ContentRight extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,15 +24,13 @@ class RightContent extends Component {
   }
 
   buttonHandler() {
-    console.log(this.state);
-    const { username, password } = this.state;
-    addUser(username, password).then(
+    const { username, password, firstname, lastname,
+      gender, birthmonth, birthday, birthyear } = this.state;
+    addUser(username, password, firstname, lastname, gender, birthmonth, birthday, birthyear).then(
       (data) => {
-        console.log(data);
         this.setState({ signedUp: data });
       },
       (error) => {
-        console.log(error);
         this.setState({ error, signedUp: false });
       },
     );
@@ -206,4 +204,4 @@ SignUpFailure.propTypes = {
   error: PropTypes.string.isRequired,
 };
 
-export default RightContent;
+export default ContentRight;

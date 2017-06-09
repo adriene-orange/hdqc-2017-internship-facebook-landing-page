@@ -3,7 +3,8 @@ import * as store from '../data/store';
 
 const getUserByUsername = username => _.find(store.users, user => user.username === username);
 
-export const addUser = (username, password) => {
+export const addUser = (username, password, firstname,
+  lastname, gender, birthmonth, birthday, birthyear) => {
   // todo: dupe check & other validation
   if (!username) {
     return Promise.reject('addUser requires a valid username');
@@ -17,7 +18,16 @@ export const addUser = (username, password) => {
     return Promise.reject('username already exists');
   }
 
-  store.users.push({ username, password });
+  store.users.push({
+    username,
+    password,
+    firstname,
+    lastname,
+    gender,
+    birthmonth,
+    birthday,
+    birthyear });
+
   return Promise.resolve(true);
 };
 

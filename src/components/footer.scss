@@ -24,13 +24,10 @@
   display: inline-block;
   list-style: none;
   text-align: left;
-
-
 }
 
 .footer-site-map li {
   padding-bottom: 3px;
-
 }
 
 .footer-site-map ul,
@@ -65,4 +62,12 @@
   height: 16px;
   vertical-align: bottom;
   margin-left: 2px;
+}
+
+.footer-wrapper {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  height: 180px;
+  background-color: white;
 }

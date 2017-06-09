@@ -10,18 +10,21 @@ class Logout extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    console.log(this.props.appLogin);
-    this.props.appLogin(false);
+    this.props.fetchUsername(false);
   }
   render() {
     return (
-      <button className="logout" onClick={this.handleClick}>Log Out</button>
+      <div className="buttonContainer">
+        <p className="username">Hello {this.props.username}</p>
+        <button className="logout" onClick={this.handleClick}>Log Out</button>
+      </div>
     );
   }
 }
 
 Logout.propTypes = {
-  appLogin: PropTypes.func.isRequired,
+  fetchUsername: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
 };
 
 export default Logout;

@@ -1,22 +1,29 @@
-
-
-.detail{
+.detail {
+  min-width: 250px;
+  flex-grow: 1;
   color: black;
-  display: inline-block;
-  text-align: left;
-  width: 300px;
+  text-align: center;
   margin-right: 100px;
   margin-top: 50px;
   border: solid black 1px;
+}
+
+.detail p {
+  text-align: left;
+  padding: 0 10px;
 }
 
 .detail-header {
   background-color: #3b5998;
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
   height: 50px;
-  width: 300px;
   line-height: 50px;
   font-size: 20px;
   text-align: center;
   color: #FDFEFE;
+  margin-top: 0;
+}
+
+.detail-image figcaption {
+  padding-top: 5px;
 }

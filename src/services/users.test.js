@@ -12,9 +12,11 @@ const doesUserExist = user =>
 describe('addUser', () => {
   describe('successes', () => {
     it('adds a new user when passed in username and password parameters', (done) => {
-      const newUser = { username: 'yo', password: 'filet' };
+      const newUser = { username: 'yo', password: 'filet', firstname: 'Yo', lastname: 'Man', gender: 'Male', birthmonth: 1, birthday: 1, birthyear: 1999 };
       expect(doesUserExist(newUser)).to.equal(undefined);
-      serviceToTest.addUser(newUser.username, newUser.password)
+      serviceToTest.addUser(newUser.username, newUser.password,
+        newUser.firstname, newUser.lastname, newUser.gender,
+        newUser.birthmonth, newUser.birthday, newUser.birthyear)
       .then(
         () => {
           expect(doesUserExist(newUser)).to.deep.equal(newUser);
@@ -59,7 +61,7 @@ describe('addUser', () => {
 
 describe('getUserByUsernameAndPassword', () => {
   describe('successes', () => {
-    it('fetches a single existing user by username and password', (done) => {
+    it('gets a single existing user by username and password', (done) => {
       const existingUser = { username: 'hdqc', password: 'hdqc' };
       expect(doesUserExist(existingUser)).to.deep.equal(existingUser);
       serviceToTest.getUserByUsernameAndPassword(existingUser.username, existingUser.password)

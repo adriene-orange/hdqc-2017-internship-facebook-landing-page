@@ -15,7 +15,10 @@ const Detail = (props) => {
         <p className="detail-header" >
           {value}
         </p>
-        <img src={imageUrl} className="detail-image" alt={value} />
+        <figure className="detail-image">
+          <img src={imageUrl} alt={value} style={{ maxHeight: '100px' }} />
+          <figcaption />
+        </figure>
       </div>
     );
   }

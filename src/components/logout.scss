@@ -1,5 +1,21 @@
+.logout {
+  background-color: #4267B2;
+  color: white;
+  height: 23px;
+  border: 1px solid #1E2B5C;
+  &:hover {
+    background-color: #3b5998;
+    cursor: pointer;
+  }
+}
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 450px;
+}
 
-.logout{
-  color: black;
+.username {
+  color: white;
+  margin-right: 20px;
 }

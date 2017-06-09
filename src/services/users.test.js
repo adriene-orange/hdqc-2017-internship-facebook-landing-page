@@ -57,12 +57,12 @@ describe('addUser', () => {
   });
 });
 
-describe('getUserByUsernameAndPassword', () => {
+describe('setUsernameByUsernameAndPassword', () => {
   describe('successes', () => {
     it('fetches a single existing user by username and password', (done) => {
       const existingUser = { username: 'hdqc', password: 'hdqc' };
       expect(doesUserExist(existingUser)).to.deep.equal(existingUser);
-      serviceToTest.getUserByUsernameAndPassword(existingUser.username, existingUser.password)
+      serviceToTest.setUsernameByUsernameAndPassword(existingUser.username, existingUser.password)
       .then(
         (user) => {
           expect(doesUserExist(user)).to.deep.equal(existingUser);
@@ -75,7 +75,7 @@ describe('getUserByUsernameAndPassword', () => {
     it('rejects if a user with the username and password does not exist', () => {
       const existingUser = { username: 'does not exist', password: 'nope' };
       expect(doesUserExist(existingUser)).to.deep.equal(undefined);
-      serviceToTest.getUserByUsernameAndPassword(existingUser.username, existingUser.password)
+      serviceToTest.setUsernameByUsernameAndPassword(existingUser.username, existingUser.password)
       .then(user => expect(user).to.not.be.ok)
       .catch(error => expect(error).to.deep.equal('User not found'));
     });

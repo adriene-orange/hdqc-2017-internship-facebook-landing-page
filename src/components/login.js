@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { getUserByUsernameAndPassword } from '../services/users';
+import { setUsernameByUsernameAndPassword } from '../services/users';
 import './header.css';
 import Button from './button';
 import LoginMessage from './loginMessage';
@@ -37,10 +37,10 @@ class Login extends Component {
   handleClick(event) {
     event.preventDefault();
     console.log(`A login attempt was made ${this.state.username} ${this.state.password}`);
-    getUserByUsernameAndPassword(this.state.username, this.state.password)
+    setUsernameByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
       this.loginResult('', '');
-      this.props.appLogin(true);
+      this.props.setUsername(this.state.username);
     }, (error) => {
       this.loginResult(error, 'error-style');
     });
@@ -90,7 +90,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  appLogin: PropTypes.func.isRequired,
+  setUsername: PropTypes.func.isRequired,
 };
 
 export default Login;

@@ -1,5 +1,5 @@
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 30%;
   font-size: 12px;
@@ -55,3 +55,10 @@
   height: 16px;
   vertical-align: bottom;
   margin-left: 2px; }
+
+.footer-wrapper {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  height: 180px;
+  background-color: white; }

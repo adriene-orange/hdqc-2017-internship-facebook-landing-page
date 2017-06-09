@@ -24,7 +24,7 @@ class Home extends Component {
     console.log(store);
     return (
       <div>
-        <Header auth={this.props.auth} appLogin={this.props.appLogin} />
+        <Header username={this.props.username} setUsername={this.props.setUsername} />
         <div className="home">
           <List func={this.getValue} store={store} />
           <Detail value={this.state.value} store={store} />
@@ -36,8 +36,8 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  auth: PropTypes.bool.isRequired,
-  appLogin: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  setUsername: PropTypes.func.isRequired,
 };
 
 export default Home;

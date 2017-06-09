@@ -7,23 +7,23 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authenticated: false,
+      username: '',
     };
-    this.appLogin = this.appLogin.bind(this);
+    this.setUsername = this.setUsername.bind(this);
   }
 
-  appLogin(authenticated) {
+  setUsername(username) {
     this.setState({
-      authenticated,
+      username,
     });
   }
 
   render() {
-    if (this.state.authenticated) {
-      return (<Home auth={this.state.authenticated} appLogin={this.appLogin} />);
+    if (this.state.username) {
+      return (<Home username={this.state.username} setUsername={this.setUsername} />);
     }
     return (
-      <Landing appLogin={this.appLogin} auth={this.state.authenticated} />
+      <Landing username={this.state.username} setUsername={this.setUsername} />
     );
   }
 }

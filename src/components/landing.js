@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
 import Header from './header';
 import ContentLeft from './contentLeft';
-import RightContent from './contentRight';
+import ContentRight from './contentRight';
 import Footer from './footer';
 
 const Landing = props => (
   <div className="App">
-    <Header appLogin={props.appLogin} styleSheet=".home-header" />
+    <Header setUsername={props.setUsername} styleSheet=".home-header" />
     <div className="content-container">
       <div className="content">
         <ContentLeft />
-        <RightContent />
+        <ContentRight />
       </div>
     </div>
     <Footer />
@@ -18,7 +18,7 @@ const Landing = props => (
 );
 
 Landing.propTypes = {
-  appLogin: PropTypes.func.isRequired,
+  setUsername: PropTypes.func.isRequired,
 };
 
 export default Landing;

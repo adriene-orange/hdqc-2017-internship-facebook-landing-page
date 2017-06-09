@@ -1,10 +1,15 @@
 .detail {
+  width: 250px;
   flex-grow: 6;
   color: black;
-  text-align: left;
+  text-align: center;
   margin-right: 100px;
   margin-top: 50px;
   border: solid black 1px; }
+
+.detail p {
+  text-align: left;
+  padding: 0 10px; }
 
 .detail-header {
   background-color: #3b5998;
@@ -15,3 +20,6 @@
   text-align: center;
   color: #FDFEFE;
   margin-top: 0; }
+
+.detail-image figcaption {
+  padding-top: 5px; }

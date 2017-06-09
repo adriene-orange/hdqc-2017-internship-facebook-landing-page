@@ -1,0 +1,7 @@
+.list-items a {
+  white-space: nowrap; }
+
+.list-item {
+  max-height: 50px;
+  width: auto;
+  cursor: pointer; }

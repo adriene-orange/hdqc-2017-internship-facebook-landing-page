@@ -5,18 +5,17 @@ import './detail.css';
 const Detail = (props) => {
   const { value, store, result } = props;
   const matchedValue = store.interests.filter(item => value === item.subject);
-  const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
 
   if (matchedValue.length === 1
         && Object.keys(result).length >= 1
       ) {
+    const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
     return (
       <div className="detail">
         <p className="detail-header" >
           {value}
         </p>
         <div style={{ height: '200px', width: 'auto', background: `url(${imageUrl})`, backgroundSize: 'contain' }} />
-        https://upload.wikimedia.org/wikipedia/commons/9/95/Aboriginal_hollow_log_tomb.jpg
       </div>
     );
   }

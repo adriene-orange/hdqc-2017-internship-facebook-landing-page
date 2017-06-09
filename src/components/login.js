@@ -36,11 +36,10 @@ class Login extends Component {
 
   handleClick(event) {
     event.preventDefault();
-    console.log(`A login attempt was made ${this.state.username} ${this.state.password}`);
     getUserByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
       this.loginResult('', '');
-      this.props.appLogin(true);
+      this.props.fetchUsername(this.state.username);
     }, (error) => {
       this.loginResult(error, 'error-style');
     });
@@ -90,7 +89,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  appLogin: PropTypes.func.isRequired,
+  fetchUsername: PropTypes.func.isRequired,
 };
 
 export default Login;

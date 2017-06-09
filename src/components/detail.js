@@ -15,7 +15,12 @@ const Detail = (props) => {
         <p className="detail-header" >
           {value}
         </p>
-        <img src={imageUrl} className="detail-image" alt={value} />
+        <figure className="detail-image">
+          <img src={imageUrl} alt={value} />
+          <figcaption>
+            <a href={ref} rel="noopener noreferrer" target="_blank">More Info</a>
+          </figcaption>
+        </figure>
       </div>
     );
   }

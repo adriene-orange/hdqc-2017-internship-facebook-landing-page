@@ -15,12 +15,11 @@ class ListItems extends Component {
 
   selectHandler(event) {
     this.setState({ selected: event.target.innerHTML });
-    // console.log(this.state.selected);
     this.props.func(event);
   }
   render() {
     const mapArray = this.props.store.interests.map(interest => (
-      <li style={{ maxHeight: '50px', width: 'auto' }} key={shortid.generate()}>
+      <li className="list-item" key={shortid.generate()}>
         <a
           role="button"
           tabIndex="-1"
@@ -31,7 +30,7 @@ class ListItems extends Component {
       </li>
     ));
     return (
-      <ul>
+      <ul className="list-items">
         { mapArray }
       </ul>
     );

@@ -16,10 +16,8 @@ const Detail = (props) => {
           {value}
         </p>
         <figure className="detail-image">
-          <img src={imageUrl} alt={value} />
-          <figcaption>
-            <a href={ref} rel="noopener noreferrer" target="_blank">More Info</a>
-          </figcaption>
+          <img src={imageUrl} alt={value} style={{ maxHeight: '100px' }} />
+          <figcaption />
         </figure>
       </div>
     );

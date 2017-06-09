@@ -15,7 +15,7 @@ const Detail = (props) => {
         <p className="detail-header" >
           {value}
         </p>
-        <div style={{ height: '200px', width: 'auto', background: `url(${imageUrl})`, backgroundSize: 'contain' }} />
+        <img src={imageUrl} className="detail-image" alt={value} />
       </div>
     );
   }

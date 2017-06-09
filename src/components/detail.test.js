@@ -61,4 +61,14 @@ describe('Detail', () => {
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().find('img').length).to.equal(0);
   });
+  it('renders a p tag if no source is given', () => {
+    const staticMarkup = server.renderToStaticMarkup(
+      <Detail
+        value="test"
+        store={{ interests: [] }}
+        result={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
+      />);
+    const $ = cheerio.load(staticMarkup);
+    expect($.root().children().find('p').length).to.equal(1);
+  });
 });

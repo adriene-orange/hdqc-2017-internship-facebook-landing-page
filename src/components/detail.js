@@ -27,6 +27,7 @@ const Detail = (props) => {
       <div className="detail-header" >
         {value}
       </div>
+      <p> Please select an interest from the list </p>
     </div>
   );
 };

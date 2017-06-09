@@ -14,21 +14,15 @@ class DetailWrapper extends Component {
   componentWillReceiveProps(nextProps) {
     return apiCall(nextProps.value).then(result => this.setState({ result }));
   }
-
   render() {
     const { value, store } = this.props;
     const { result } = this.state;
-    if (Object.keys(result).length >= 1) {
-      return (
-        <Detail
-          value={value}
-          store={store}
-          result={result}
-        />
-      );
-    }
     return (
-      <p>Select an interest</p>
+      <Detail
+        value={value}
+        store={store}
+        result={result}
+      />
     );
   }
 }

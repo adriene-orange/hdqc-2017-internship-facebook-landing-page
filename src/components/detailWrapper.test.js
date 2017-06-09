@@ -17,9 +17,14 @@ describe('Detail Wrapper', () => {
     const $ = cheerio.load(staticMarkup);
     expect($.root().first()).to.be.ok;
   });
-  it('Detail component is found', () => {
+  it('renders a detail component when source is given', () => {
     wrapper.setState(
       { result: { pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } } });
     expect(wrapper.find('Detail').length).to.be.equal(1);
+  });
+  it('renders a p tag if no source is given', () => {
+    wrapper.setState(
+      { result: {} });
+    expect(wrapper.find('p').length).to.be.equal(1);
   });
 });

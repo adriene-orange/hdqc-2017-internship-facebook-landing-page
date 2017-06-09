@@ -3,13 +3,12 @@ import './detail.css';
 // import DetailWrapper from './detailWrapper';
 
 const Detail = (props) => {
-  const { value, store, result, imageLink } = props;
+  const { value, store, result } = props;
   const matchedValue = store.interests.filter(item => value === item.subject);
-  const imageUrl = imageLink.pages[Object.keys(imageLink.pages)[0]].imageinfo[0].url;
+  const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
 
   if (matchedValue.length === 1
         && Object.keys(result).length >= 1
-        && Object.keys(imageLink).length >= 1
       ) {
     return (
       <div className="detail">
@@ -34,7 +33,6 @@ Detail.propTypes = {
   value: PropTypes.string.isRequired,
   store: PropTypes.arrayOf(PropTypes.object).isRequired,
   result: PropTypes.objectOf(PropTypes.object).isRequired,
-  imageLink: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default Detail;

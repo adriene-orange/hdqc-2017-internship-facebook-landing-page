@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as store from '../data/store';
 
-const setUsernameByUsername = username => _.find(store.users, user => user.username === username);
+const fetchUsernameByUsername = username => _.find(store.users, user => user.username === username);
 
 export const addUser = (username, password, firstname,
   lastname, gender, birthmonth, birthday, birthyear) => {
@@ -14,7 +14,7 @@ export const addUser = (username, password, firstname,
     return Promise.reject('addUser requires a valid password');
   }
 
-  if (setUsernameByUsername(username)) {
+  if (fetchUsernameByUsername(username)) {
     return Promise.reject('username already exists');
   }
 
@@ -40,7 +40,7 @@ export const addUser = (username, password, firstname,
   return Promise.resolve(true);
 };
 
-export const setUsernameByUsernameAndPassword = (username, password) => {
+export const fetchUsernameByUsernameAndPassword = (username, password) => {
   const user = _.find(store.users, existingUser =>
     existingUser.username === username && existingUser.password === password,
   );

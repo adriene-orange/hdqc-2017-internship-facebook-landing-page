@@ -10,7 +10,7 @@ class Logout extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.props.setUsername(false);
+    this.props.fetchUsername(false);
   }
   render() {
     return (
@@ -23,7 +23,7 @@ class Logout extends Component {
 }
 
 Logout.propTypes = {
-  setUsername: PropTypes.func.isRequired,
+  fetchUsername: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
 };
 

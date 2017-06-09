@@ -24,7 +24,7 @@ class Home extends Component {
     console.log(store);
     return (
       <div>
-        <Header username={this.props.username} setUsername={this.props.setUsername} />
+        <Header username={this.props.username} fetchUsername={this.props.fetchUsername} />
         <div className="home">
           <List func={this.getValue} store={store} />
           <Detail value={this.state.value} store={store} />
@@ -37,7 +37,7 @@ class Home extends Component {
 
 Home.propTypes = {
   username: PropTypes.string.isRequired,
-  setUsername: PropTypes.func.isRequired,
+  fetchUsername: PropTypes.func.isRequired,
 };
 
 export default Home;

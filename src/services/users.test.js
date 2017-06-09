@@ -12,9 +12,11 @@ const doesUserExist = user =>
 describe('addUser', () => {
   describe('successes', () => {
     it('adds a new user when passed in username and password parameters', (done) => {
-      const newUser = { username: 'yo', password: 'filet' };
+      const newUser = { username: 'yo', password: 'filet', firstname: 'Yo', lastname: 'Man', gender: 'Male', birthmonth: 1, birthday: 1, birthyear: 1999 };
       expect(doesUserExist(newUser)).to.equal(undefined);
-      serviceToTest.addUser(newUser.username, newUser.password)
+      serviceToTest.addUser(newUser.username, newUser.password,
+        newUser.firstname, newUser.lastname, newUser.gender,
+        newUser.birthmonth, newUser.birthday, newUser.birthyear)
       .then(
         () => {
           expect(doesUserExist(newUser)).to.deep.equal(newUser);
@@ -57,12 +59,12 @@ describe('addUser', () => {
   });
 });
 
-describe('setUsernameByUsernameAndPassword', () => {
+describe('fetchUsernameByUsernameAndPassword', () => {
   describe('successes', () => {
     it('fetches a single existing user by username and password', (done) => {
       const existingUser = { username: 'hdqc', password: 'hdqc' };
       expect(doesUserExist(existingUser)).to.deep.equal(existingUser);
-      serviceToTest.setUsernameByUsernameAndPassword(existingUser.username, existingUser.password)
+      serviceToTest.fetchUsernameByUsernameAndPassword(existingUser.username, existingUser.password)
       .then(
         (user) => {
           expect(doesUserExist(user)).to.deep.equal(existingUser);
@@ -75,7 +77,7 @@ describe('setUsernameByUsernameAndPassword', () => {
     it('rejects if a user with the username and password does not exist', () => {
       const existingUser = { username: 'does not exist', password: 'nope' };
       expect(doesUserExist(existingUser)).to.deep.equal(undefined);
-      serviceToTest.setUsernameByUsernameAndPassword(existingUser.username, existingUser.password)
+      serviceToTest.fetchUsernameByUsernameAndPassword(existingUser.username, existingUser.password)
       .then(user => expect(user).to.not.be.ok)
       .catch(error => expect(error).to.deep.equal('User not found'));
     });

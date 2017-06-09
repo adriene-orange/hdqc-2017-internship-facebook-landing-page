@@ -9,10 +9,10 @@ class App extends Component {
     this.state = {
       username: '',
     };
-    this.setUsername = this.setUsername.bind(this);
+    this.fetchUsername = this.fetchUsername.bind(this);
   }
 
-  setUsername(username) {
+  fetchUsername(username) {
     this.setState({
       username,
     });
@@ -20,10 +20,10 @@ class App extends Component {
 
   render() {
     if (this.state.username) {
-      return (<Home username={this.state.username} setUsername={this.setUsername} />);
+      return (<Home username={this.state.username} fetchUsername={this.fetchUsername} />);
     }
     return (
-      <Landing username={this.state.username} setUsername={this.setUsername} />
+      <Landing username={this.state.username} fetchUsername={this.fetchUsername} />
     );
   }
 }

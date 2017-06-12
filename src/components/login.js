@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { getUserByUsernameAndPassword } from '../services/users';
 // import { bindActionCreators } from 'redux';
-// import { connect } from 'react-redux';
+import * as fetchUsername from '../actions/fetchUsername';
 // import * as loginActions from '../actions/login';
 import Button from './button';
 import LoginMessage from './loginMessage';
@@ -42,7 +43,7 @@ class Login extends Component {
     getUserByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
       this.loginResult('', '');
-      this.props.fetchUsername(this.state.username);
+      this.props.dispatch(fetchUsername.userLogin(this.state.username));
     }, (error) => {
       this.loginResult(error, 'error-style');
     });
@@ -106,11 +107,11 @@ class Login extends Component {
 // }
 
 Login.propTypes = {
-  fetchUsername: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
   // loginUser: PropTypes.func.isRequired,
   // actions: PropTypes.func.isRequired,
   // user: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
-export default Login;
+export default connect()(Login);
+// export default Login;

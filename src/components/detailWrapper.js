@@ -14,7 +14,6 @@ class DetailWrapper extends Component {
   componentWillReceiveProps(nextProps) {
     return apiCall(nextProps.value).then(result => this.setState({ result }));
   }
-
   render() {
     const { value, userData } = this.props;
     const { result } = this.state;

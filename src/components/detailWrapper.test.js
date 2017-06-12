@@ -11,6 +11,7 @@ describe('Detail Wrapper', () => {
   const wrapper = shallow(<DetailWrapper />);
   it('renders without crashing', () => {
     const staticMarkup = server.renderToStaticMarkup(<DetailWrapper
+      store={{ interests: [] }}
       result={{}}
       test=""
     />);
@@ -21,10 +22,5 @@ describe('Detail Wrapper', () => {
     wrapper.setState(
       { result: { pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } } });
     expect(wrapper.find('Detail').length).to.be.equal(1);
-  });
-  it('renders a p tag if no source is given', () => {
-    wrapper.setState(
-      { result: {} });
-    expect(wrapper.find('p').length).to.be.equal(1);
   });
 });

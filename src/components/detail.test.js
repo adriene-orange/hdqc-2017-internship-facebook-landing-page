@@ -65,7 +65,7 @@ describe('Detail', () => {
     const staticMarkup = server.renderToStaticMarkup(
       <Detail
         value="test"
-        store={{ interests: [] }}
+        userData={{ interests: [] }}
         result={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
       />);
     const $ = cheerio.load(staticMarkup);

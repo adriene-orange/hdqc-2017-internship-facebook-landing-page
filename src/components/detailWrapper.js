@@ -15,21 +15,26 @@ class DetailWrapper extends Component {
     return apiCall(nextProps.value).then(result => this.setState({ result }));
   }
   render() {
-    const { value, store } = this.props;
+    const { value, userData } = this.props;
     const { result } = this.state;
+    if (Object.keys(result).length >= 1) {
+      return (
+        <Detail
+          value={value}
+          userData={userData}
+          result={result}
+        />
+      );
+    }
     return (
-      <Detail
-        value={value}
-        store={store}
-        result={result}
-      />
+      <p>Select an interest</p>
     );
   }
 }
 
 DetailWrapper.propTypes = {
   value: PropTypes.string.isRequired,
-  store: PropTypes.arrayOf(PropTypes.objects).isRequired,
+  userData: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 
 export default DetailWrapper;

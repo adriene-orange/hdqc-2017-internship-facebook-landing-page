@@ -3,8 +3,8 @@ import './detail.css';
 // import DetailWrapper from './detailWrapper';
 
 const Detail = (props) => {
-  const { value, store, result } = props;
-  const matchedValue = store.interests.filter(item => value === item.subject);
+  const { value, userData, result } = props;
+  const matchedValue = userData.interests.filter(item => value === item.subject);
 
   if (matchedValue.length === 1
         && Object.keys(result).length >= 1
@@ -34,7 +34,7 @@ const Detail = (props) => {
 
 Detail.propTypes = {
   value: PropTypes.string.isRequired,
-  store: PropTypes.arrayOf(PropTypes.object).isRequired,
+  userData: PropTypes.arrayOf(PropTypes.object).isRequired,
   result: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 

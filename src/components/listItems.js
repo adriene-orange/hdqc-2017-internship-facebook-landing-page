@@ -54,9 +54,9 @@ ListItems.defaultProps = {
 };
 
 function mapStateToProps(state) {
-  console.log(state);
+  console.log('listItems--', state.selectedInterest.subject);
   return {
-    subject: state.subject,
+    subject: state.selectedInterest.subject,
   };
 }
 

@@ -4,7 +4,7 @@ import List from './list';
 import DetailWrapper from './detailWrapper';
 import Header from './header';
 import Footer from './footer';
-import * as store from '../data/store';
+import * as userData from '../data/store';
 
 class Home extends Component {
   constructor(props) {
@@ -24,8 +24,8 @@ class Home extends Component {
       <div>
         <Header username={this.props.username} fetchUsername={this.props.fetchUsername} />
         <div className="home">
-          <List func={this.getValue} store={store} />
-          <DetailWrapper value={this.state.value} store={store} />
+          <List func={this.getValue} userData={userData} />
+          <DetailWrapper value={this.state.value} userData={userData} />
         </div>
         <Footer />
       </div>

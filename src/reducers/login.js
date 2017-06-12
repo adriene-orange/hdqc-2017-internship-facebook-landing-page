@@ -1,6 +1,4 @@
-const state = { };
-
-export default (payload = {}) => {
+export default (state = {}, payload = {}) => {
   switch (payload.type) {
     case 'login':
       return [...state, payload.user, payload.error];

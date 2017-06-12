@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import login from './login';
+// import login from './login';
+import selectedInterest from './selectedInterest';
 
 const rootReducer = combineReducers({
-  login,
+  selectedInterest,
 });
 
 export default rootReducer;

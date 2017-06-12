@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import shortid from 'shortid';
+// import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as selectInterest from '../actions/selectInterest';
 import './listItems.css';
 
 
@@ -14,11 +17,13 @@ class ListItems extends Component {
   }
 
   selectHandler(event) {
-    this.setState({ selected: event.target.innerHTML });
-    this.props.func(event);
+    // this.setState({ selected: event.target.innerHTML });
+    // this.props.func(event);
+    this.props.dispatch(selectInterest.updateInterest(event.target.innerHTML));
   }
   render() {
-    const mapArray = this.props.store.interests.map(interest => (
+    console.log(this.props);
+    const mapArray = this.props.userData.interests.map(interest => (
       <li className="list-item" key={shortid.generate()}>
         <a
           role="button"
@@ -39,12 +44,27 @@ class ListItems extends Component {
 
 ListItems.propTypes = {
   // values: PropTypes.arrayOf(PropTypes.string).isRequired,
-  func: PropTypes.func.isRequired,
-  store: PropTypes.arrayOf(PropTypes.object).isRequired,
+  // func: PropTypes.func.isRequired,
+  userData: PropTypes.objectOf(PropTypes.array).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 ListItems.defaultProps = {
   values: [],
 };
 
-export default ListItems;
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    subject: state.subject,
+  };
+}
+
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     action: bindActionCreators(selectInterest, dispatch),
+//   };
+// }
+
+// export default ListItems;
+export default connect(mapStateToProps)(ListItems);

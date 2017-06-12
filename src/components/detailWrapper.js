@@ -16,13 +16,13 @@ class DetailWrapper extends Component {
   }
 
   render() {
-    const { value, store } = this.props;
+    const { value, userData } = this.props;
     const { result } = this.state;
     if (Object.keys(result).length >= 1) {
       return (
         <Detail
           value={value}
-          store={store}
+          userData={userData}
           result={result}
         />
       );
@@ -35,7 +35,7 @@ class DetailWrapper extends Component {
 
 DetailWrapper.propTypes = {
   value: PropTypes.string.isRequired,
-  store: PropTypes.arrayOf(PropTypes.objects).isRequired,
+  userData: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 
 export default DetailWrapper;

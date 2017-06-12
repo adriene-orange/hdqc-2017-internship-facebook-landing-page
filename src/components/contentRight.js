@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import * as signUpActions from '../actions/handleSignup';
 import './contentRight.css';
-import { addUser } from '../services/users';
 
 import Radio from './radioButton';
 
@@ -10,8 +11,8 @@ class ContentRight extends Component {
     this.state = {
       username: '',
       password: '',
-      signedUp: false,
-      error: '',
+      // signedUp: false,
+      // signUpError: '',
       firstname: '',
       lastname: '',
       birthmonth: '',
@@ -24,16 +25,10 @@ class ContentRight extends Component {
   }
 
   buttonHandler() {
-    const { username, password, firstname, lastname,
-      gender, birthmonth, birthday, birthyear } = this.state;
-    addUser(username, password, firstname, lastname, gender, birthmonth, birthday, birthyear).then(
-      (data) => {
-        this.setState({ signedUp: data });
-      },
-      (error) => {
-        this.setState({ error, signedUp: false });
-      },
-    );
+    // const { username, password, firstname, lastname,
+    //   gender, birthmonth, birthday, birthyear } = this.state;
+    const inputs = this.state;
+    this.props.dispatch(signUpActions.handleSignup(inputs));
   }
 
   handleChange(event) {
@@ -43,13 +38,13 @@ class ContentRight extends Component {
 
   render() {
     const banner = () => {
-      if (this.state.signedUp) {
+      if (this.props.signedUp) {
         return (
           <SignUpSuccess />
         );
-      } else if (this.state.error !== '') {
+      } else if (this.props.signUpError !== '') {
         return (
-          <SignUpFailure error={this.state.error} />
+          <SignUpFailure signUpError={this.props.signUpError} />
         );
       }
       return (
@@ -57,6 +52,7 @@ class ContentRight extends Component {
       );
     };
 
+    console.log('prrooopppppsssssss........', this.props);
     return (
       <div className="RightContent">
         <div className="RightHeader">
@@ -196,12 +192,25 @@ const SignUpFailure = props => (
     className="response-banner"
     style={{ ...bannerStyle, backgroundColor: 'salmon' }}
   >
-    {props.error}
+    {props.signUpError}
   </div>
 );
 
-SignUpFailure.propTypes = {
-  error: PropTypes.string.isRequired,
+ContentRight.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  signedUp: PropTypes.bool.isRequired,
+  signUpError: PropTypes.string.isRequired,
 };
 
-export default ContentRight;
+SignUpFailure.propTypes = {
+  signUpError: PropTypes.string.isRequired,
+};
+
+function mapStateToProps(state) {
+  return {
+    signedUp: state.handleSignup.signedUp,
+    signUpError: state.handleSignup.signUpError,
+  };
+}
+
+export default connect(mapStateToProps)(ContentRight);

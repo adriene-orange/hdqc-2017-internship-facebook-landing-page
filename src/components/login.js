@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-// import { getUserByUsernameAndPassword } from '../services/users';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as loginActions from '../actions/login';
+import { getUserByUsernameAndPassword } from '../services/users';
+// import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import * as loginActions from '../actions/login';
 import Button from './button';
 import LoginMessage from './loginMessage';
 import './header.css';
@@ -39,15 +39,15 @@ class Login extends Component {
 
   handleClick(event) {
     event.preventDefault();
-    // getUserByUsernameAndPassword(this.state.username, this.state.password)
-    // .then(() => {
-    //   this.loginResult('', '');
-    //   this.props.fetchUsername(this.state.username);
-    // }, (error) => {
-    //   this.loginResult(error, 'error-style');
-    // });
-    this.props.actions.loginUser(this.state.username, this.state.password);
-    this.props.fetchUsername(this.props.user);
+    getUserByUsernameAndPassword(this.state.username, this.state.password)
+    .then(() => {
+      this.loginResult('', '');
+      this.props.fetchUsername(this.state.username);
+    }, (error) => {
+      this.loginResult(error, 'error-style');
+    });
+    // this.props.actions.loginUser(this.state.username, this.state.password);
+    // this.props.fetchUsername(this.props.user);
   }
 
   render() {
@@ -93,23 +93,24 @@ class Login extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.user,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(loginActions, dispatch),
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     user: state.user,
+//   };
+// }
+//
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     actions: bindActionCreators(loginActions, dispatch),
+//   };
+// }
 
 Login.propTypes = {
   fetchUsername: PropTypes.func.isRequired,
-  loginUser: PropTypes.func.isRequired,
-  actions: PropTypes.func.isRequired,
-  user: PropTypes.objectOf(PropTypes.object).isRequired,
+  // loginUser: PropTypes.func.isRequired,
+  // actions: PropTypes.func.isRequired,
+  // user: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+// export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;

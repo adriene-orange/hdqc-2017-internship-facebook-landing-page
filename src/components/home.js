@@ -8,17 +8,6 @@ import Footer from './footer';
 import * as userData from '../data/store';
 
 const Home = props => (
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     value: '',
-  //   };
-  //   this.props.subscribe(() => {
-  //     this.setState({
-  //       value: this.props.getState().subject,
-  //     });
-  //   });
-  // }
 
   <div>
     <Header username={props.username} fetchUsername={props.fetchUsername} />

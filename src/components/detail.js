@@ -3,7 +3,6 @@ import './detail.css';
 // import DetailWrapper from './detailWrapper';
 
 const Detail = (props) => {
-  console.log('hello');
   const { value, userData, result } = props;
   const matchedValue = userData.interests.filter(item => value === item.subject);
 

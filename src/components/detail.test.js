@@ -11,7 +11,7 @@ describe('Detail', () => {
   it('renders without crashing', () => {
     const staticMarkup = server.renderToStaticMarkup(<Detail
       value="test"
-      store={{ interests: [] }}
+      userData={{ interests: [] }}
       result={{}}
     />);
     const $ = cheerio.load(staticMarkup);
@@ -22,7 +22,7 @@ describe('Detail', () => {
     const staticMarkup = server.renderToStaticMarkup(
       <Detail
         value="test"
-        store={{ interests: [] }}
+        userData={{ interests: [] }}
         result={{ pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } }}
       />);
     const $ = cheerio.load(staticMarkup);
@@ -33,7 +33,7 @@ describe('Detail', () => {
     const staticMarkup = server.renderToStaticMarkup(
       <Detail
         value="test"
-        store={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
+        userData={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
         result={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
       />);
     const $ = cheerio.load(staticMarkup);
@@ -44,7 +44,7 @@ describe('Detail', () => {
     const staticMarkup = server.renderToStaticMarkup(
       <Detail
         value="test"
-        store={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
+        userData={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
         result={{ pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } }}
       />);
     const $ = cheerio.load(staticMarkup);
@@ -55,7 +55,7 @@ describe('Detail', () => {
     const staticMarkup = server.renderToStaticMarkup(
       <Detail
         value="test"
-        store={{ interests: [] }}
+        userData={{ interests: [] }}
         result={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
       />);
     const $ = cheerio.load(staticMarkup);

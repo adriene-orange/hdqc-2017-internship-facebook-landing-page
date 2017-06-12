@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'hdqc',
+      username: '',
     };
     this.fetchUsername = this.fetchUsername.bind(this);
   }

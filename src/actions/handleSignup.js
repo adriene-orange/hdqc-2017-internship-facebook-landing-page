@@ -13,8 +13,10 @@ const signUpRejected = error => ({ type: SIGNUP_REJECTED, signedUp: false, signU
 
 export const handleSignup = inputs => (dispatch) => {
   dispatch(initiateSignup());
-
-  return addUser(inputs)
+  const { username, password, firstname,
+    lastname, gender, birthmonth, birthday, birthyear } = inputs;
+  return addUser(username, password, firstname,
+    lastname, gender, birthmonth, birthday, birthyear)
     .then(
       (data) => {
         dispatch(signUpApproved(data));

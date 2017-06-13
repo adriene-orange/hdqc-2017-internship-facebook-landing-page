@@ -1,22 +1,27 @@
 import React, { Component, PropTypes } from 'react';
-import { apiCall } from '../services/apiCall';
+// import { apiCall } from '../services/apiCall';
+import { connect } from 'react-redux';
 import Detail from './detail';
+import * as callWiki from '../actions/callWiki';
 
 class DetailWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: {},
-      test: '',
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    return apiCall(nextProps.value).then(result => this.setState({ result }));
+    // return apiCall(nextProps.value).then(result => this.setState({ result }));
+    if (this.props.value !== nextProps.value) {
+      console.log('check for props', nextProps.value);
+      return this.props.dispatch(callWiki.getWikiData(nextProps.value));
+    }
+    return nextProps;
   }
+
   render() {
-    const { value, userData } = this.props;
-    const { result } = this.state;
+    const { value, userData, result } = this.props;
     if (Object.keys(result).length >= 1) {
       return (
         <Detail
@@ -40,6 +45,14 @@ class DetailWrapper extends Component {
 DetailWrapper.propTypes = {
   value: PropTypes.string.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
+  result: PropTypes.objectOf(PropTypes.Object).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default DetailWrapper;
+function mapStateToProps(state) {
+  return {
+    result: state.callWiki.result,
+  };
+}
+
+export default connect(mapStateToProps)(DetailWrapper);

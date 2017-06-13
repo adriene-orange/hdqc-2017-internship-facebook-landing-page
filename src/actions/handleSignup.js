@@ -1,16 +1,17 @@
 import { addUser } from '../services/users';
 
-const INITIATE_SIGNUP = 'INITIATE_SIGNUP';
-const SIGNUP_APPROVED = 'SIGNUP_APPROVED';
-const SIGNUP_REJECTED = 'SIGNUP_REJECTED';
+// types
+export const INITIATE_SIGNUP = 'INITIATE_SIGNUP';
+export const SIGNUP_APPROVED = 'SIGNUP_APPROVED';
+export const SIGNUP_REJECTED = 'SIGNUP_REJECTED';
 
-const initiateSignup = () => ({ type: INITIATE_SIGNUP });
+// actions
+export const initiateSignup = () => ({ type: INITIATE_SIGNUP });
+export const signUpApproved = data => ({ type: SIGNUP_APPROVED, signedUp: data });
+export const signUpRejected = error =>
+({ type: SIGNUP_REJECTED, signedUp: false, signUpError: error });
 
-const signUpApproved = data => ({ type: SIGNUP_APPROVED, signedUp: data });
-
-const signUpRejected = error => ({ type: SIGNUP_REJECTED, signedUp: false, signUpError: error });
-
-
+// thunk
 export const handleSignup = inputs => (dispatch) => {
   dispatch(initiateSignup());
   const { username, password, firstname,

@@ -7,8 +7,7 @@ import * as callWiki from '../actions/callWiki';
 class DetailWrapper extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   componentWillReceiveProps(nextProps) {
@@ -17,7 +16,7 @@ class DetailWrapper extends Component {
       console.log('check for props', nextProps.value);
       return this.props.dispatch(callWiki.getWikiData(nextProps.value));
     }
-    return nextProps;
+    return this.props.result;
   }
 
   render() {

@@ -11,7 +11,7 @@ describe('Detail Wrapper', () => {
   const wrapper = shallow(<DetailWrapper />);
   it('renders without crashing', () => {
     const staticMarkup = server.renderToStaticMarkup(<DetailWrapper
-      store={{ interests: [] }}
+      userData={{ interests: [] }}
       result={{}}
       test=""
     />);

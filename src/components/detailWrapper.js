@@ -27,11 +27,12 @@ class DetailWrapper extends Component {
       );
     }
     return (
-      <Detail
-        value={value}
-        userData={userData}
-        result={result}
-      />
+      <div className="detail">
+        <div className="detail-header" >
+          {value}
+        </div>
+        <p> Please select an interest from the list </p>
+      </div>
     );
   }
 }

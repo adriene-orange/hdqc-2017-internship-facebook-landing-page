@@ -16,3 +16,15 @@ export const apiCall = (title) => {
     })
     .then(data => data.query);
 };
+
+export const textApicall = (pageId) => {
+  const textUrl = `${wikiUrl}?action=parse&format=json&summary=&pageid=${pageId}&section=0&contentmodel=wikitext`;
+  return fetch(textUrl)
+    .then((response) => {
+      if (response.status >= 400) {
+        throw new Error('Bad response from server');
+      }
+      return response.json();
+    })
+    .then(data => data.parse);
+};

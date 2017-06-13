@@ -8,14 +8,18 @@ class DetailWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: '',
     };
   }
 
   componentWillReceiveProps(nextProps) {
     // return apiCall(nextProps.value).then(result => this.setState({ result }));
-    return this.props.dispatch(callWiki.getWikiData(nextProps.value));
+    if (this.props.value !== nextProps.value) {
+      console.log('check for props', nextProps.value);
+      return this.props.dispatch(callWiki.getWikiData(nextProps.value));
+    }
+    return nextProps;
   }
+
   render() {
     const { value, userData, result } = this.props;
     if (Object.keys(result).length >= 1) {

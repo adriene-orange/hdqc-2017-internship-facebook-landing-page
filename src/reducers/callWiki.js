@@ -3,7 +3,7 @@ export default (state = { loading: false, result: {}, error: '' }, payload) => {
     case 'DATA_REQUESTED':
       return { ...state, loading: true, result: {}, error: '' };
     case 'DATA_ACCEPTED':
-      return { ...state, loading: false, result: payload.data, error: '' };
+      return { ...state, loading: false, result: payload.result, error: '' };
     case 'DATA_REJECTED':
       return { ...state, loading: false, result: {}, error: '' };
     default:

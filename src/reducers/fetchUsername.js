@@ -1,3 +1,5 @@
+// const initialState = { username: '' };
+
 export default (state = {}, payload) => {
   switch (payload.type) {
     case 'fetchedUsername':

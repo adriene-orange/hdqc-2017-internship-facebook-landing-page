@@ -16,11 +16,15 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  username: PropTypes.string.isRequired,
+  username: PropTypes.string,
+};
+
+App.defaultProps = {
+  username: '',
 };
 
 function mapStateToProps(state) {
-  console.log('app---', state);
+  console.log('app---', state.fetchedUsername.username);
   return {
     username: state.fetchedUsername.username,
   };

@@ -40,6 +40,7 @@ class Login extends Component {
 
   handleClick(event) {
     event.preventDefault();
+    console.log('login--', this.state.username);
     getUserByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
       this.loginResult('', '');

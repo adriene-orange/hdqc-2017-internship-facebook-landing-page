@@ -23,8 +23,13 @@ const Home = props => (
 );
 
 Home.propTypes = {
-  username: PropTypes.string.isRequired,
-  subject: PropTypes.string.isRequired,
+  username: PropTypes.string,
+  subject: PropTypes.string,
+};
+
+Home.defaultProps = {
+  username: '',
+  subject: '',
 };
 
 function mapStateToProps(state) {

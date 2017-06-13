@@ -48,8 +48,6 @@ class Login extends Component {
     }, (error) => {
       this.loginResult(error, 'error-style');
     });
-    // this.props.actions.loginUser(this.state.username, this.state.password);
-    // this.props.fetchUsername(this.props.user);
   }
 
   render() {
@@ -95,24 +93,14 @@ class Login extends Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     user: state.user,
-//   };
-// }
-//
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     actions: bindActionCreators(loginActions, dispatch),
-//   };
-// }
-
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  // loginUser: PropTypes.func.isRequired,
-  // actions: PropTypes.func.isRequired,
-  // user: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
-export default connect()(Login);
-// export default Login;
+function mapStateToProps(state) {
+  return {
+    username: state.fetchedUsername.username,
+  };
+}
+
+export default connect(mapStateToProps)(Login);

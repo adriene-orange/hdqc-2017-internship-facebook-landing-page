@@ -13,12 +13,9 @@ import store from './store';
 
 describe('App component', () => {
   const StoreInstance = store();
-  const wrapper = shallow(<App />);
+  const wrapper = shallow(<App store={StoreInstance} />);
 
   it('renders without crashing', () => {
-    // const staticMarkup = server.renderToStaticMarkup(<App store={StoreInstance} />);
-    // const $ = cheerio.load(staticMarkup);
-    // expect($.root().children().first()).to.be.ok;
     expect(wrapper).to.have.length(1);
   });
 
@@ -26,8 +23,8 @@ describe('App component', () => {
     expect(wrapper.find(Landing).length).to.be.equal(1);
   });
 
-  it('renders success message when state is set to true', () => {
-    wrapper.setState({ username: 'bob' });
+  it('renders Home when given a username', () => {
+    wrapper.setProps({ username: 'hdqc' });
     expect(wrapper.find(Home)).to.have.length(1);
   });
 });

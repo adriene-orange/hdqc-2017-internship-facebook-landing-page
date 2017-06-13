@@ -38,8 +38,13 @@ class DetailWrapper extends Component {
 }
 
 DetailWrapper.propTypes = {
-  value: PropTypes.string.isRequired,
-  userData: PropTypes.objectOf(PropTypes.array).isRequired,
+  value: PropTypes.string,
+  userData: PropTypes.objectOf(PropTypes.array),
+};
+
+DetailWrapper.defaultProps = {
+  value: '',
+  userData: {},
 };
 
 export default DetailWrapper;

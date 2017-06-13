@@ -17,8 +17,6 @@ class ListItems extends Component {
   }
 
   selectHandler(event) {
-    // this.setState({ selected: event.target.innerHTML });
-    // this.props.func(event);
     this.props.dispatch(selectInterest.updateInterest(event.target.innerHTML));
   }
   render() {
@@ -43,8 +41,6 @@ class ListItems extends Component {
 }
 
 ListItems.propTypes = {
-  // values: PropTypes.arrayOf(PropTypes.string).isRequired,
-  // func: PropTypes.func.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
@@ -53,18 +49,4 @@ ListItems.defaultProps = {
   values: [],
 };
 
-function mapStateToProps(state) {
-  console.log(state);
-  return {
-    subject: state.subject,
-  };
-}
-
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     action: bindActionCreators(selectInterest, dispatch),
-//   };
-// }
-
-// export default ListItems;
-export default connect(mapStateToProps)(ListItems);
+export default connect()(ListItems);

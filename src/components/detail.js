@@ -10,6 +10,8 @@ const Detail = (props) => {
         && Object.keys(result).length >= 1
       ) {
     const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
+    // const detailText = data.text['*'];
+    // console.log(detailText);
     return (
       <div className="detail">
         <p className="detail-header" >
@@ -36,6 +38,7 @@ Detail.propTypes = {
   value: PropTypes.string.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
   result: PropTypes.objectOf(PropTypes.object).isRequired,
+  // data: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 Detail.defaultProps = {

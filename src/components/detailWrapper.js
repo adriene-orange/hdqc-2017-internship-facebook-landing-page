@@ -21,13 +21,14 @@ class DetailWrapper extends Component {
   }
 
   render() {
-    const { value, userData, result } = this.props;
+    const { value, userData, result, data } = this.props;
     if (Object.keys(result).length >= 1) {
       return (
         <Detail
           value={value}
           userData={userData}
           result={result}
+          data={data}
         />
       );
     }
@@ -46,12 +47,14 @@ DetailWrapper.propTypes = {
   value: PropTypes.string.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
   result: PropTypes.objectOf(PropTypes.Object).isRequired,
+  data: PropTypes.objectOf(PropTypes.Object).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
     result: state.callWiki.result,
+    data: state.callWiki.data,
   };
 }
 

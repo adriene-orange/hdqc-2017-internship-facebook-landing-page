@@ -18,7 +18,7 @@ export const apiCall = (title) => {
 };
 
 export const textApicall = (pageId) => {
-  const textUrl = `${wikiUrl}?action=parse&format=json&summary=&pageid=${pageId}&section=0&contentmodel=wikitext`;
+  const textUrl = `${wikiUrl}?action=parse&origin=*&format=json&summary=&pageid=${pageId}&section=0&contentmodel=wikitext`;
   return fetch(textUrl)
     .then((response) => {
       if (response.status >= 400) {

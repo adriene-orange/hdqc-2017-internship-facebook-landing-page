@@ -10,11 +10,6 @@ import store from '../store';
 
 describe('Content Right', () => {
   const StoreInstance = store();
-  // const wrappedContent = WrappedComponent => (
-  //   <Provider store={StoreInstance}>
-  //     <WrappedComponent />
-  //   </Provider>
-  // );
   it('renders without crashing', () => {
     const staticMarkup = server.renderToStaticMarkup(<ContentRight store={StoreInstance} />);
     const $ = cheerio.load(staticMarkup);

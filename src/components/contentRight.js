@@ -51,8 +51,6 @@ class ContentRight extends Component {
         <div />
       );
     };
-
-    console.log('prrooopppppsssssss........', this.props);
     return (
       <div className="RightContent">
         <div className="RightHeader">

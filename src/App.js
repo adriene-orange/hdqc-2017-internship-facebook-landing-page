@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   render() {
-    if (!this.state.username) {
+    if (this.state.username) {
       return (<Home username={this.state.username} fetchUsername={this.fetchUsername} />);
     }
     return (

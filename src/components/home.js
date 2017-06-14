@@ -8,8 +8,7 @@ import Footer from './footer';
 import * as userData from '../data/store';
 
 const Home = props => (
-
-  <div>
+  <div className="home-container">
     <Header username={props.username} fetchUsername={props.fetchUsername} />
     <div className="home">
       <List userData={userData} />

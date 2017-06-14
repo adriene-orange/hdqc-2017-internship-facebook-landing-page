@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { getUserByUsernameAndPassword } from '../services/users';
-// import { bindActionCreators } from 'redux';
 import * as fetchUsername from '../actions/fetchUsername';
-// import * as loginActions from '../actions/login';
 import Button from './button';
 import LoginMessage from './loginMessage';
 import './header.css';
@@ -40,7 +38,6 @@ class Login extends Component {
 
   handleClick(event) {
     event.preventDefault();
-    console.log('login--', this.state.username);
     getUserByUsernameAndPassword(this.state.username, this.state.password)
     .then(() => {
       this.loginResult('', '');

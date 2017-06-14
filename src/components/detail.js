@@ -5,11 +5,7 @@ import './detail.css';
 const Detail = (props) => {
   const { value, userData, imageUrl, detailText } = props;
   const matchedValue = userData.interests.filter(item => value === item.subject);
-  console.log('I am in the detail');
-  console.log(props);
-  console.log('matched value', matchedValue.length);
   if (matchedValue.length === 1) {
-    console.log('detail---', detailText);
     return (
       <div className="detail">
         <p className="detail-header" >

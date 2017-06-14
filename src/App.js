@@ -8,7 +8,6 @@ import Landing from './components/landing';
 import Home from './components/home';
 
 const App = (props) => {
-  // console.log('heeeyy', props.username);
   if (props.username) {
     return (<Home username={props.username} />);
   }
@@ -24,7 +23,6 @@ App.defaultProps = {
 };
 
 function mapStateToProps(state) {
-  console.log('app---', state.fetchedUsername.username);
   return {
     username: state.fetchedUsername.username,
   };

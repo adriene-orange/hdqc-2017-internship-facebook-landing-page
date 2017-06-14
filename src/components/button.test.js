@@ -15,7 +15,6 @@ describe('Button component', () => {
   it('Finds a button in the file', () => {
     const staticMarkup = server.renderToStaticMarkup(<Button />);
     const $ = cheerio.load(staticMarkup);
-    // console.log($.root().children().toString());
     expect($.root().children()).to.be.ok;
   });
 });

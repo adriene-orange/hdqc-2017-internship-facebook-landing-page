@@ -48,7 +48,7 @@ class DetailWrapper extends Component {
         <div className="detail-header" >
           {value}
         </div>
-        <p> Detail wrapper failed to render detail </p>
+        <p> Please select an interest </p>
       </div>
     );
   }

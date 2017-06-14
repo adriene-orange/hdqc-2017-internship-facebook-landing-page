@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Detail from './detail';
 import * as callWiki from '../actions/callWiki';
+import './loadingSpinner.css';
 
 class DetailWrapper extends Component {
   constructor(props) {
@@ -19,8 +20,19 @@ class DetailWrapper extends Component {
   }
 
   render() {
-    const { value, userData, result } = this.props;
-    if (Object.keys(result).length >= 1) {
+    const { value, userData, result, loading } = this.props;
+    if (loading) {
+      return (
+        <div className="detail">
+          <div className="detail-header" >
+            {value}
+          </div>
+          <div className="loader">
+            Loading...
+          </div>
+        </div>
+      );
+    } else if (Object.keys(result).length >= 1) {
       return (
         <Detail
           value={value}
@@ -45,11 +57,13 @@ DetailWrapper.propTypes = {
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
   result: PropTypes.objectOf(PropTypes.Object).isRequired,
   dispatch: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
     result: state.callWiki.result,
+    loading: state.callWiki.loading,
   };
 }
 

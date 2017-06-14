@@ -1,6 +1,13 @@
 .home {
   background-color: white;
   display: flex;
-  max-width: 1000px;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 0 0 10% 0;
+}
+
+.home-container {
+  height: 100%;
 }

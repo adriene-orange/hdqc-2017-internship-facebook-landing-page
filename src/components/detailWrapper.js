@@ -22,13 +22,20 @@ class DetailWrapper extends Component {
 
   render() {
     const { value, userData, result, data } = this.props;
-    if (Object.keys(result).length >= 1) {
+    console.log(this.props);
+    console.log(Object.keys(result).length, Object.keys(data).length);
+    if (Object.keys(result).length >= 1 && Object.keys(data).length >= 1) {
+      console.log('detailWrapper data -- ', data);
+      const detailText = data.text['*'];
+      const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
+      console.log(detailText);
+      // console.log('detailWrapper data -- ', data.text['*']);
       return (
         <Detail
           value={value}
           userData={userData}
-          result={result}
-          data={data}
+          imageUrl={imageUrl}
+          detailText={detailText}
         />
       );
     }
@@ -37,24 +44,30 @@ class DetailWrapper extends Component {
         <div className="detail-header" >
           {value}
         </div>
-        <p> Please select an interest from the list </p>
+        <p> Detail wrapper failed to render detail </p>
       </div>
     );
   }
 }
 
 DetailWrapper.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
-  result: PropTypes.objectOf(PropTypes.Object).isRequired,
-  data: PropTypes.objectOf(PropTypes.Object).isRequired,
+  result: PropTypes.objectOf(PropTypes.Object),
+  data: PropTypes.objectOf(PropTypes.object),
   dispatch: PropTypes.func.isRequired,
+};
+
+DetailWrapper.defaultProps = {
+  value: '',
+  result: {},
+  data: {},
 };
 
 function mapStateToProps(state) {
   return {
     result: state.callWiki.result,
-    data: state.callWiki.data,
+    data: state.textCall.data,
   };
 }
 

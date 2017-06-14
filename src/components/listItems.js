@@ -1,3 +1,4 @@
+
 import React, { Component, PropTypes } from 'react';
 import shortid from 'shortid';
 // import { bindActionCreators } from 'redux';
@@ -17,10 +18,12 @@ class ListItems extends Component {
   }
 
   selectHandler(event) {
-    this.props.dispatch(selectInterest.updateInterest(event.target.innerHTML));
+    if (event.target.innerHTML !== this.props.selectInterest) {
+      this.props.dispatch(selectInterest.updateInterest(event.target.innerHTML));
+    }
   }
+
   render() {
-    console.log(this.props);
     const mapArray = this.props.userData.interests.map(interest => (
       <li className="list-item" key={shortid.generate()}>
         <a
@@ -43,10 +46,17 @@ class ListItems extends Component {
 ListItems.propTypes = {
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
   dispatch: PropTypes.func.isRequired,
+  selectInterest: PropTypes.string.isRequired,
 };
 
 ListItems.defaultProps = {
   values: [],
 };
 
-export default connect()(ListItems);
+function mapStateToProps(state) {
+  return {
+    selectInterest: state.selectedInterest.subject,
+  };
+}
+
+export default connect(mapStateToProps)(ListItems);

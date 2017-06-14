@@ -3,6 +3,7 @@ import { apiCall, textApicall } from '../services/apiCall';
 export const DATA_REQUESTED = 'DATA_REQUESTED';
 export const DATA_ACCEPTED = 'DATA_ACCEPTED';
 export const DATA_REJECTED = 'DATA_REJECTED';
+
 export const REQUEST_ACCEPTED = 'REQUEST_ACCEPTED';
 export const REQUEST_REJECTED = 'REQUEST_REJECTED';
 
@@ -21,6 +22,7 @@ export const getWikiText = pageId => (dispatch) => {
   .then(
     (data) => {
       dispatch(textRequestAccepted(data));
+      console.log('getWikiText', data);
     },
     (error) => {
       dispatch(textRequestRejected(error));
@@ -34,8 +36,9 @@ export const getWikiData = title => (dispatch) => {
   return apiCall(title)
   .then(
     (result) => {
-      // const pageID = result.pages[Object.keys(result.pages)[0]].pageid;
-      // dispatch(getWikiText(pageID));
+      const pageID = result.pages[Object.keys(result.pages)[0]].pageid;
+      console.log(pageID);
+      dispatch(getWikiText(pageID));
       dispatch(wikiAccepted(result));
     },
     (error) => {

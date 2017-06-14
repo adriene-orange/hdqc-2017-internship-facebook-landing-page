@@ -3,13 +3,9 @@ import './detail.css';
 // import DetailWrapper from './detailWrapper';
 
 const Detail = (props) => {
-  const { value, userData, result } = props;
+  const { value, userData, imageUrl, detailText } = props;
   const matchedValue = userData.interests.filter(item => value === item.subject);
-
-  if (matchedValue.length === 1
-        && Object.keys(result).length >= 1
-      ) {
-    const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
+  if (matchedValue.length === 1) {
     return (
       <div className="detail">
         <p className="detail-header" >
@@ -19,6 +15,9 @@ const Detail = (props) => {
           <img src={imageUrl} alt={value} style={{ maxHeight: '500px' }} />
           <figcaption />
         </figure>
+        <p>
+          {detailText}
+        </p>
       </div>
     );
   }
@@ -35,13 +34,15 @@ const Detail = (props) => {
 Detail.propTypes = {
   value: PropTypes.string.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
-  result: PropTypes.objectOf(PropTypes.object).isRequired,
+  imageUrl: PropTypes.string,
+  detailText: PropTypes.string,
 };
 
 Detail.defaultProps = {
   value: '',
   userData: {},
-  result: {},
+  imageUrl: '',
+  detailText: '',
 };
 
 export default Detail;

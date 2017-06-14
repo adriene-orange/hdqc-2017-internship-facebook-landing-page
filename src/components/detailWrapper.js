@@ -1,28 +1,45 @@
 import React, { Component, PropTypes } from 'react';
-import { apiCall } from '../services/apiCall';
+import { connect } from 'react-redux';
 import Detail from './detail';
+import * as wikiCall from '../actions/wikiCall';
+import './loadingSpinner.css';
+
 
 class DetailWrapper extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      result: {},
-      test: '',
-    };
+    this.state = {};
   }
 
   componentWillReceiveProps(nextProps) {
-    return apiCall(nextProps.value).then(result => this.setState({ result }));
+    if (this.props.value !== nextProps.value) {
+      return this.props.dispatch(wikiCall.getWikiData(nextProps.value));
+    }
+    return this.props.result;
   }
+
   render() {
-    const { value, userData } = this.props;
-    const { result } = this.state;
-    if (Object.keys(result).length >= 1) {
+    const { value, userData, result, data, loading } = this.props;
+    if (loading) {
+      return (
+        <div className="detail">
+          <div className="detail-header" >
+            {value}
+          </div>
+          <div className="loader">
+            Loading...
+          </div>
+        </div>
+      );
+    } else if (Object.keys(result).length >= 1 && Object.keys(data).length >= 1) {
+      const detailText = data.text['*'];
+      const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
       return (
         <Detail
           value={value}
           userData={userData}
-          result={result}
+          imageUrl={imageUrl}
+          detailText={detailText}
         />
       );
     }
@@ -31,7 +48,7 @@ class DetailWrapper extends Component {
         <div className="detail-header" >
           {value}
         </div>
-        <p> Please select an interest from the list </p>
+        <p> Please select an interest </p>
       </div>
     );
   }
@@ -40,11 +57,25 @@ class DetailWrapper extends Component {
 DetailWrapper.propTypes = {
   value: PropTypes.string,
   userData: PropTypes.objectOf(PropTypes.array),
+  result: PropTypes.objectOf(PropTypes.Object),
+  data: PropTypes.objectOf(PropTypes.object),
+  dispatch: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 DetailWrapper.defaultProps = {
   value: '',
   userData: {},
+  result: {},
+  data: {},
 };
 
-export default DetailWrapper;
+function mapStateToProps(state) {
+  return {
+    result: state.wikiCall.result,
+    data: state.wikiCall.data,
+    loading: state.wikiCall.loading,
+  };
+}
+
+export default connect(mapStateToProps)(DetailWrapper);

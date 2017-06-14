@@ -25,6 +25,7 @@ describe('Detail Wrapper', () => {
     // expect($.root().first()).to.be.ok;
     expect(wrapper).to.have.length(1);
   });
+
   it('renders a detail component when source is given', () => {
     console.log('---------FIX THIS TEST---------');
     // const wrapper = shallow(<DetailWrapper {...props} store={StoreInstance} />);

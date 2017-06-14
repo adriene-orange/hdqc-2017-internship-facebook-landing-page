@@ -12,7 +12,7 @@ describe('Detail', () => {
     const staticMarkup = server.renderToStaticMarkup(<Detail
       value="test"
       userData={{ interests: [] }}
-      result={{}}
+      imageUrl={{}}
     />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().first()).to.be.ok;
@@ -23,7 +23,7 @@ describe('Detail', () => {
       <Detail
         value="test"
         userData={{ interests: [] }}
-        result={{ pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } }}
+        imageUrl=""
       />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().find('.detail-header').text()).contains('test');
@@ -34,7 +34,7 @@ describe('Detail', () => {
       <Detail
         value="test"
         userData={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
-        result={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
+        imageUrl="alskdfj"
       />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().find('img').attr('src')).contains('alskdfj');
@@ -45,7 +45,7 @@ describe('Detail', () => {
       <Detail
         value="test"
         userData={{ interests: [{ subject: 'test', image: 'www.google.com' }] }}
-        result={{ pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } }}
+        imageUrl=""
       />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().find('img').length).to.equal(1);
@@ -56,7 +56,7 @@ describe('Detail', () => {
       <Detail
         value="test"
         userData={{ interests: [] }}
-        result={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
+        imageUrl={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
       />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().find('img').length).to.equal(0);
@@ -66,7 +66,7 @@ describe('Detail', () => {
       <Detail
         value="test"
         userData={{ interests: [] }}
-        result={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
+        imageUrl={{ pages: { boo: { thumbnail: { source: 'alskdfj' } } } }}
       />);
     const $ = cheerio.load(staticMarkup);
     expect($.root().children().find('p').length).to.equal(1);

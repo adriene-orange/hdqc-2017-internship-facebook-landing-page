@@ -6,7 +6,7 @@ import Footer from './footer';
 
 const Landing = props => (
   <div className="App">
-    <Header fetchUsername={props.fetchUsername} styleSheet=".home-header" />
+    <Header username={props.username} styleSheet=".home-header" />
     <div className="content-container">
       <div className="content">
         <ContentLeft />
@@ -18,7 +18,12 @@ const Landing = props => (
 );
 
 Landing.propTypes = {
-  fetchUsername: PropTypes.func.isRequired,
+  username: PropTypes.string,
 };
+
+Landing.defaultProps = {
+  username: '',
+};
+
 
 export default Landing;

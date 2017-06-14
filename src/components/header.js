@@ -4,7 +4,7 @@ import Login from './login';
 import Logout from './logout';
 
 const Header = (props) => {
-  const { username, fetchUsername } = props;
+  const { username } = props;
   return (
     <div className="header">
       <div className="loginForm">
@@ -15,8 +15,8 @@ const Header = (props) => {
         </div>
         {
           (!username)
-          ? <Login fetchUsername={fetchUsername} />
-          : <Logout fetchUsername={fetchUsername} username={username} />
+          ? <Login />
+          : <Logout username={username} />
         }
       </div>
     </div>
@@ -24,7 +24,6 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  fetchUsername: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
 };
 

@@ -1,31 +1,31 @@
-import React, { Component } from 'react';
+// Libs
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+
+// Components
 import './App.css';
 import Landing from './components/landing';
 import Home from './components/home';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-    };
-    this.fetchUsername = this.fetchUsername.bind(this);
+const App = (props) => {
+  if (props.username) {
+    return (<Home username={props.username} />);
   }
+  return (<Landing username={props.username} />);
+};
 
-  fetchUsername(username) {
-    this.setState({
-      username,
-    });
-  }
+App.propTypes = {
+  username: PropTypes.string,
+};
 
-  render() {
-    if (this.state.username) {
-      return (<Home username={this.state.username} fetchUsername={this.fetchUsername} />);
-    }
-    return (
-      <Landing username={this.state.username} fetchUsername={this.fetchUsername} />
-    );
-  }
+App.defaultProps = {
+  username: '',
+};
+
+function mapStateToProps(state) {
+  return {
+    username: state.fetchedUsername.username,
+  };
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

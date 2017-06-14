@@ -7,13 +7,11 @@ export const SIGNUP_REJECTED = 'SIGNUP_REJECTED';
 
 // actions
 export const initiateSignup = () => ({ type: INITIATE_SIGNUP });
-
 export const signUpApproved = data => ({ type: SIGNUP_APPROVED, signedUp: data });
-
 export const signUpRejected = error =>
 ({ type: SIGNUP_REJECTED, signedUp: false, signUpError: error });
 
-
+// thunk
 export const handleSignup = inputs => (dispatch) => {
   dispatch(initiateSignup());
   const { username, password, firstname,

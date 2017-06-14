@@ -1,23 +1,38 @@
 import React, { Component, PropTypes } from 'react';
-import { apiCall } from '../services/apiCall';
+// import { apiCall } from '../services/apiCall';
+import { connect } from 'react-redux';
 import Detail from './detail';
+import * as callWiki from '../actions/callWiki';
+import './loadingSpinner.css';
 
 class DetailWrapper extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      result: {},
-      test: '',
-    };
+    this.state = {};
   }
 
   componentWillReceiveProps(nextProps) {
-    return apiCall(nextProps.value).then(result => this.setState({ result }));
+    // return apiCall(nextProps.value).then(result => this.setState({ result }));
+    if (this.props.value !== nextProps.value) {
+      return this.props.dispatch(callWiki.getWikiData(nextProps.value));
+    }
+    return this.props.result;
   }
+
   render() {
-    const { value, userData } = this.props;
-    const { result } = this.state;
-    if (Object.keys(result).length >= 1) {
+    const { value, userData, result, loading } = this.props;
+    if (loading) {
+      return (
+        <div className="detail">
+          <div className="detail-header" >
+            {value}
+          </div>
+          <div className="loader">
+            Loading...
+          </div>
+        </div>
+      );
+    } else if (Object.keys(result).length >= 1) {
       return (
         <Detail
           value={value}
@@ -40,6 +55,16 @@ class DetailWrapper extends Component {
 DetailWrapper.propTypes = {
   value: PropTypes.string.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
+  result: PropTypes.objectOf(PropTypes.Object).isRequired,
+  dispatch: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-export default DetailWrapper;
+function mapStateToProps(state) {
+  return {
+    result: state.callWiki.result,
+    loading: state.callWiki.loading,
+  };
+}
+
+export default connect(mapStateToProps)(DetailWrapper);

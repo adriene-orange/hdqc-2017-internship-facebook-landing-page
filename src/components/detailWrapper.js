@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 // import { apiCall } from '../services/apiCall';
 import { connect } from 'react-redux';
 import Detail from './detail';
-import * as callWiki from '../actions/callWiki';
+import * as wikiCall from '../actions/wikiCall';
 
 class DetailWrapper extends Component {
   constructor(props) {
@@ -15,20 +15,16 @@ class DetailWrapper extends Component {
     // return apiCall(nextProps.value).then(result => this.setState({ result }));
     if (this.props.value !== nextProps.value) {
       console.log('check for props', nextProps.value);
-      return this.props.dispatch(callWiki.getWikiData(nextProps.value));
+      return this.props.dispatch(wikiCall.getWikiData(nextProps.value));
     }
     return nextProps;
   }
 
   render() {
     const { value, userData, result, data } = this.props;
-    console.log(this.props);
-    console.log(Object.keys(result).length, Object.keys(data).length);
     if (Object.keys(result).length >= 1 && Object.keys(data).length >= 1) {
-      console.log('detailWrapper data -- ', data);
       const detailText = data.text['*'];
       const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
-      console.log(detailText);
       // console.log('detailWrapper data -- ', data.text['*']);
       return (
         <Detail
@@ -66,8 +62,8 @@ DetailWrapper.defaultProps = {
 
 function mapStateToProps(state) {
   return {
-    result: state.callWiki.result,
-    data: state.textCall.data,
+    result: state.wikiCall.result,
+    data: state.wikiCall.data,
   };
 }
 

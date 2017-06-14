@@ -9,20 +9,21 @@ export const REQUEST_REJECTED = 'REQUEST_REJECTED';
 
 // actions
 export const initiateWikiCall = () => ({ type: DATA_REQUESTED, loading: true });
-export const wikiAccepted = result => ({ type: DATA_ACCEPTED, result, loading: false });
+export const wikiAccepted = result => ({ type: DATA_ACCEPTED, result, loading: true });
 export const wikiRejected = error => ({ type: DATA_REJECTED, error, loading: false });
 
-export const textRequestAccepted = data => ({ type: REQUEST_ACCEPTED, data });
-export const textRequestRejected = error => ({ type: REQUEST_REJECTED, error });
+export const initiateTextCall = () => ({ type: DATA_REQUESTED, loading: true });
+export const textRequestAccepted = (result, data) =>
+({ type: REQUEST_ACCEPTED, data, result, loading: false });
+export const textRequestRejected = error => ({ type: REQUEST_REJECTED, error, loading: false });
 
 // thunk
-export const getWikiText = pageId => (dispatch) => {
-  console.log('getwikiText called');
-  textApicall(pageId)
+export const getWikiText = (result, pageId) => (dispatch) => {
+  dispatch(initiateTextCall());
+  return textApicall(pageId)
   .then(
     (data) => {
-      dispatch(textRequestAccepted(data));
-      console.log('getWikiText', data);
+      dispatch(textRequestAccepted(result, data));
     },
     (error) => {
       dispatch(textRequestRejected(error));
@@ -37,12 +38,13 @@ export const getWikiData = title => (dispatch) => {
   .then(
     (result) => {
       const pageID = result.pages[Object.keys(result.pages)[0]].pageid;
-      console.log(pageID);
-      dispatch(getWikiText(pageID));
+      dispatch(getWikiText(result, pageID));
       dispatch(wikiAccepted(result));
+      return result;
     },
     (error) => {
       dispatch(wikiRejected(error));
+      return error;
     },
   );
 };

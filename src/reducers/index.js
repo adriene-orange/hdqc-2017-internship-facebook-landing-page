@@ -2,14 +2,12 @@ import { combineReducers } from 'redux';
 // import login from './login';
 import selectedInterest from './selectedInterest';
 import handleSignup from './handleSignup';
-import callWiki from './callWiki';
-import textCall from './textCall';
+import wikiCall from './wikiCall';
 
 const rootReducer = combineReducers({
   selectedInterest,
   handleSignup,
-  callWiki,
-  textCall,
+  wikiCall,
 });
 
 export default rootReducer;

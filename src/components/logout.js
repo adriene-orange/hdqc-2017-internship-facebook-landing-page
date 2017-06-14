@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import * as fetchUsername from '../actions/fetchUsername';
 import './logout.css';
 
 class Logout extends Component {
@@ -10,7 +12,7 @@ class Logout extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.props.fetchUsername(false);
+    this.props.dispatch(fetchUsername.userLogin(''));
   }
   render() {
     return (
@@ -23,8 +25,8 @@ class Logout extends Component {
 }
 
 Logout.propTypes = {
-  fetchUsername: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default Logout;
+export default connect()(Logout);

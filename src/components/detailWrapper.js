@@ -56,7 +56,7 @@ class DetailWrapper extends Component {
 
 DetailWrapper.propTypes = {
   value: PropTypes.string,
-  userData: PropTypes.objectOf(PropTypes.array).isRequired,
+  userData: PropTypes.objectOf(PropTypes.array),
   result: PropTypes.objectOf(PropTypes.Object),
   data: PropTypes.objectOf(PropTypes.object),
   dispatch: PropTypes.func.isRequired,
@@ -65,6 +65,7 @@ DetailWrapper.propTypes = {
 
 DetailWrapper.defaultProps = {
   value: '',
+  userData: {},
   result: {},
   data: {},
 };

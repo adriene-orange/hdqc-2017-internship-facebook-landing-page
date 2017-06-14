@@ -1,5 +1,8 @@
+// Libs
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+
+// Components
 import './home.css';
 import List from './list';
 import DetailWrapper from './detailWrapper';
@@ -9,7 +12,7 @@ import * as userData from '../data/store';
 
 const Home = props => (
   <div className="home-container">
-    <Header username={props.username} fetchUsername={props.fetchUsername} />
+    <Header username={props.username} />
     <div className="home">
       <List userData={userData} />
       <DetailWrapper value={props.subject} userData={userData} />
@@ -19,13 +22,16 @@ const Home = props => (
 );
 
 Home.propTypes = {
-  username: PropTypes.string.isRequired,
-  subject: PropTypes.string.isRequired,
-  fetchUsername: PropTypes.func.isRequired,
+  username: PropTypes.string,
+  subject: PropTypes.string,
+};
+
+Home.defaultProps = {
+  username: '',
+  subject: '',
 };
 
 function mapStateToProps(state) {
-  console.log('listItems--', state.selectedInterest.subject);
   return {
     subject: state.selectedInterest.subject,
   };

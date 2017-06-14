@@ -13,7 +13,6 @@ class DetailWrapper extends Component {
   componentWillReceiveProps(nextProps) {
     // return apiCall(nextProps.value).then(result => this.setState({ result }));
     if (this.props.value !== nextProps.value) {
-      console.log('check for props', nextProps.value);
       return this.props.dispatch(callWiki.getWikiData(nextProps.value));
     }
     return this.props.result;

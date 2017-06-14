@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-// import { apiCall } from '../services/apiCall';
 import { connect } from 'react-redux';
 import Detail from './detail';
-import * as callWiki from '../actions/callWiki';
+import * as wikiCall from '../actions/wikiCall';
 import './loadingSpinner.css';
+
 
 class DetailWrapper extends Component {
   constructor(props) {
@@ -12,15 +12,14 @@ class DetailWrapper extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // return apiCall(nextProps.value).then(result => this.setState({ result }));
     if (this.props.value !== nextProps.value) {
-      return this.props.dispatch(callWiki.getWikiData(nextProps.value));
+      return this.props.dispatch(wikiCall.getWikiData(nextProps.value));
     }
     return this.props.result;
   }
 
   render() {
-    const { value, userData, result, loading } = this.props;
+    const { value, userData, result, data, loading } = this.props;
     if (loading) {
       return (
         <div className="detail">
@@ -32,12 +31,15 @@ class DetailWrapper extends Component {
           </div>
         </div>
       );
-    } else if (Object.keys(result).length >= 1) {
+    } else if (Object.keys(result).length >= 1 && Object.keys(data).length >= 1) {
+      const detailText = data.text['*'];
+      const imageUrl = result.pages[Object.keys(result.pages)[0]].thumbnail.source;
       return (
         <Detail
           value={value}
           userData={userData}
-          result={result}
+          imageUrl={imageUrl}
+          detailText={detailText}
         />
       );
     }
@@ -46,24 +48,32 @@ class DetailWrapper extends Component {
         <div className="detail-header" >
           {value}
         </div>
-        <p> Please select an interest from the list </p>
+        <p> Please select an interest </p>
       </div>
     );
   }
 }
 
 DetailWrapper.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
-  result: PropTypes.objectOf(PropTypes.Object).isRequired,
+  result: PropTypes.objectOf(PropTypes.Object),
+  data: PropTypes.objectOf(PropTypes.object),
   dispatch: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
 };
 
+DetailWrapper.defaultProps = {
+  value: '',
+  result: {},
+  data: {},
+};
+
 function mapStateToProps(state) {
   return {
-    result: state.callWiki.result,
-    loading: state.callWiki.loading,
+    result: state.wikiCall.result,
+    data: state.wikiCall.data,
+    loading: state.wikiCall.loading,
   };
 }
 

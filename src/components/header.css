@@ -2,14 +2,11 @@
   background-color: #3b5998;
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
   height: 82px;
-  width: 100%;
-  display: flex; }
+  width: 100%; }
 
 .logo {
   height: 34px;
-  width: 100%;
-  margin-top: 30px;
-  margin-right: 40px;
+  width: 200px;
   background-image: url("https://www.facebook.com//rsrc.php/v3/yd/r/aH47aSjq6a4.png");
   background-repeat: no-repeat;
   background-size: auto;
@@ -18,8 +15,9 @@
   @media (max-width: 600px) {
     .logo {
       width: 150px;
-      height: 30px;
+      height: 40px;
       background-size: cover;
+      background-position: 0 -15%;
       margin: 0; } }
 
 u {
@@ -42,13 +40,13 @@ u {
     cursor: pointer; }
 
 .form-text {
-  display: flex;
-  align-items: flex-end;
   color: white;
   margin-right: 15px;
   font-size: 12px;
   text-align: left;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  align-items: flex-end; }
 
 .input-form {
   display: inline-block; }

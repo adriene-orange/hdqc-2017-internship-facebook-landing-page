@@ -15,9 +15,7 @@ const Detail = (props) => {
           <img src={imageUrl} alt={value} style={{ maxHeight: '500px' }} />
           <figcaption />
         </figure>
-        <p>
-          {detailText}
-        </p>
+        <div dangerouslySetInnerHTML={{ __html: detailText }} />
       </div>
     );
   }

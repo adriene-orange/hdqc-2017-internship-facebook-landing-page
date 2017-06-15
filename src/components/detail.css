@@ -6,6 +6,9 @@
   margin-right: 10%;
   margin-top: 50px;
   border: solid black 1px; }
+  @media (max-width: 600px) {
+    .detail {
+      margin: 10px auto; } }
 
 .detail p {
   text-align: left;

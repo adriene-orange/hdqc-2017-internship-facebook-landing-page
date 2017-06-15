@@ -1,3 +1,5 @@
+@import './global.scss';
+
 .logout {
   background-color: #4267B2;
   color: white;
@@ -12,10 +14,16 @@
 .buttonContainer {
   display: flex;
   align-items: center;
-  margin-left: 450px;
+  @include for-phone-only {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
 .username {
+  @include for-phone-only {
+    margin: 0 0 5px 0;
+  }
   color: white;
   margin-right: 20px;
 }

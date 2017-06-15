@@ -9,9 +9,15 @@
 
 .buttonContainer {
   display: flex;
-  align-items: center;
-  margin-left: 450px; }
+  align-items: center; }
+  @media (max-width: 600px) {
+    .buttonContainer {
+      flex-direction: column;
+      align-items: flex-end; } }
 
 .username {
   color: white;
   margin-right: 20px; }
+  @media (max-width: 600px) {
+    .username {
+      margin: 0 0 5px 0; } }

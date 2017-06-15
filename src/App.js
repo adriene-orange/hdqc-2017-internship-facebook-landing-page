@@ -22,15 +22,10 @@ App.defaultProps = {
   username: '',
 };
 
-function mapStateToProps() {
+function mapStateToProps(state) {
   return {
-    username: 'hdqc',
+    username: state.fetchedUsername.username,
   };
 }
-// function mapStateToProps(state) {
-//   return {
-//     username: state.fetchedUsername.username,
-//   };
-// }
 
 export default connect(mapStateToProps)(App);

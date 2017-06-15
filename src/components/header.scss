@@ -1,13 +1,16 @@
+@import './global.scss';
+
 .header {
   background-color: #3b5998;
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
   height: 82px;
+  width: 100%;
   display: flex;
 }
 
 .logo {
   height: 34px;
-  width: 170px;
+  width: 100%;
   margin-top: 30px;
   margin-right: 40px;
   background-image: url("https://www.facebook.com//rsrc.php/v3/yd/r/aH47aSjq6a4.png");
@@ -77,6 +80,9 @@ u {
 .loginElements{
   padding-top: 10px;
   margin-left: 380px;
+  @include phone{
+    display: none;
+  }
 }
 
 .forgotAccount{

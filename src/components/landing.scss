@@ -1,7 +1,7 @@
 @import './global.scss';
 
 .landing{
-  @include phone{
+  @include for-phone-only{
     max-width: 100%;
   }
 }

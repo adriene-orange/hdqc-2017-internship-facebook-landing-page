@@ -7,7 +7,7 @@
   display: flex;
   margin: 0 auto;
   padding: 20px 0;
-  @include phone{
+  @include for-phone-only{
     min-width: 100%;
   }
 }
@@ -15,7 +15,7 @@
 .content-container {
   background: #edf0f5;
   padding-bottom: 180px;
-  @include phone{
+  @include for-phone-only{
     width: 100%;
     padding-bottom: 0px;
   }

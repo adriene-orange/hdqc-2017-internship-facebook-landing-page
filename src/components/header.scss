@@ -21,9 +21,10 @@
   cursor: pointer;
 
   @include for-phone-only {
-    max-width: 100px;
-    height: 24px;
+    width: 150px;
+    height: 30px;
     background-size: cover;
+    margin: 0;
   }
 }
 
@@ -79,6 +80,7 @@ u {
   max-width: 90%;
   padding: 0 10%;
   height: 100%;
+  min-width: 150px;
 }
 
 .loginItems{
@@ -91,7 +93,7 @@ u {
 .loginElements{
   padding-top: 10px;
   margin-left: 380px;
-  @include phone{
+  @include for-phone-only{
     display: none;
   }
 }

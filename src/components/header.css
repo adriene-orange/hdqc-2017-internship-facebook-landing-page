@@ -1,7 +1,15 @@
 .header {
   background-color: #3b5998;
   background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  height: 82px;
+  width: 100%;
+  display: flex; }
 
+.logo {
+  height: 34px;
+  width: 100%;
+  margin-top: 30px;
+  margin-right: 40px;
   background-image: url("https://www.facebook.com//rsrc.php/v3/yd/r/aH47aSjq6a4.png");
   background-repeat: no-repeat;
   background-size: auto;
@@ -9,9 +17,10 @@
   cursor: pointer; }
   @media (max-width: 600px) {
     .logo {
-      max-width: 100px;
-      height: 24px;
-      background-size: cover; } }
+      width: 150px;
+      height: 30px;
+      background-size: cover;
+      margin: 0; } }
 
 u {
   left: -999999px;
@@ -55,7 +64,8 @@ u {
   margin: 0 auto;
   max-width: 90%;
   padding: 0 10%;
-  height: 100%; }
+  height: 100%;
+  min-width: 150px; }
 
 .loginItems {
   display: flex;

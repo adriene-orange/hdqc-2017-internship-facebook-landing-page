@@ -4,9 +4,14 @@
 .content {
   display: flex;
   margin: 0 auto;
-  width: 1000px;
   padding: 20px 0; }
+  @media (max-width: 600px) {
+    .content {
+      min-width: 100%; } }
 
 .content-container {
   background: #edf0f5;
   padding-bottom: 180px; }
+  @media (max-width: 600px) {
+    .content-container {
+      width: 100%; } }

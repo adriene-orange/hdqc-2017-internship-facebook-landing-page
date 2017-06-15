@@ -5,7 +5,7 @@ import ContentRight from './contentRight';
 import Footer from './footer';
 
 const Landing = props => (
-  <div className="App">
+  <div className="landing">
     <Header username={props.username} styleSheet=".home-header" />
     <div className="content-container">
       <div className="content">

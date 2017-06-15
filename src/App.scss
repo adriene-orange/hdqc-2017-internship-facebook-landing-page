@@ -1,3 +1,4 @@
+@import './components/global.scss';
 .App {
   text-align: center;
 }
@@ -5,11 +6,16 @@
 .content {
   display: flex;
   margin: 0 auto;
-  width: 1000px;
   padding: 20px 0;
+  @include phone{
+    min-width: 100%;
+  }
 }
 
 .content-container {
   background: #edf0f5;
   padding-bottom: 180px;
+  @include phone{
+    width: 100%;
+  }
 }

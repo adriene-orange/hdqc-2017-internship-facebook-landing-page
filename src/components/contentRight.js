@@ -54,8 +54,10 @@ class ContentRight extends Component {
     };
     return (
       <div className="RightContent">
+        <div className="mobile-login">
+          <Login classStyle="mobile-loginElements" />
+        </div>
         <div className="RightHeader">
-          <Login />
           <h1 className="sign-up">Sign Up</h1>
           <p className="titleSubtext">It&apos;s free and always will be.</p>
         </div>

@@ -6,7 +6,7 @@
   width: 565px;
   margin-right: 15px;
 
-  @include  phone {
+  @include  for-phone-only {
     display: none;
   }
 }

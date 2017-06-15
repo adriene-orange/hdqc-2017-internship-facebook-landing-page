@@ -15,7 +15,7 @@ const Header = (props) => {
         </div>
         {
           (!username)
-          ? <Login />
+          ? <Login classStyle="loginElements" />
           : <Logout username={username} />
         }
       </div>

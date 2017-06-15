@@ -8,17 +8,15 @@
 }
 
 .logo {
-  height: 34px;
+  height: 40px;
   width: 200px;
   background-image: url("https://www.facebook.com//rsrc.php/v3/yd/r/aH47aSjq6a4.png");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   display: inline-block;
   cursor: pointer;
   @include for-phone-only {
     width: 150px;
-    height: 40px;
-    background-size: cover;
     background-position: 0 -15%;
     margin: 0;
   }

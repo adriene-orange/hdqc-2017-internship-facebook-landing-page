@@ -1,3 +1,5 @@
+@import './global.scss';
+
 .sign-up {
   font-size: 36px;
 }
@@ -5,6 +7,10 @@
 .RightContent{
   width: 400px;
   display: inline-block;
+  @include phone{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .titleSubtext {
@@ -44,6 +50,9 @@
   box-sizing: border-box;
   padding-left: 10px;
   border: 1px solid lightgrey;
+  @include phone{
+    width: 100%;
+  }
 }
 
 .RightSecond {
@@ -55,7 +64,7 @@
 }
 
 .FL_Name {
-  margin-left: -10px;
+  margin-left: 0px;
 }
 
 .RightSecond select {

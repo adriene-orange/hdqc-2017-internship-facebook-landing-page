@@ -1,8 +1,14 @@
+@import './global.scss';
+
 .contentLeft {
   display: inline-block;
   text-align: left;
   width: 565px;
   margin-right: 15px;
+
+  @include  phone {
+    display: none;
+  }
 }
 
 .left-header {

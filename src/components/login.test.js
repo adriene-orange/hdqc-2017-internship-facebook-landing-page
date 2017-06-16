@@ -2,7 +2,6 @@ import React from 'react';
 import server from 'react-dom/server';
 import cheerio from 'cheerio';
 import { expect } from 'chai';
-
 import Login from './login';
 import store from '../store';
 

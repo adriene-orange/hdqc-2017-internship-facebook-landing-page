@@ -2,8 +2,6 @@
 
 .landing{
   @include for-phone-only{
-    max-width: 100%;
-    min-width: 340px;
-    width: 340px;
+    width: 100%;
   }
 }

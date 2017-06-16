@@ -34,6 +34,8 @@ u {
   margin: 0;
   @include for-phone-only{
     padding-left: 0px;
+    display: inline-block;
+    max-width: 100px;
   }
 }
 
@@ -59,6 +61,9 @@ u {
   @include for-phone-only{
     color: black;
     font-size: 14px;
+    display: inline-block;
+    margin-right: 0px;
+    font-size: 20px;
   }
 }
 .input-form{
@@ -110,6 +115,7 @@ u {
   @include for-phone-only{
     display: inline-block;
     margin-left: 0px;
+    width: 100%;
   }
 }
 

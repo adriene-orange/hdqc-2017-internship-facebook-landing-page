@@ -29,7 +29,9 @@ u {
   margin: 0; }
   @media (max-width: 600px) {
     .button-container {
-      padding-left: 0px; } }
+      padding-left: 0px;
+      display: inline-block;
+      max-width: 100px; } }
 
 .button {
   background-color: #4267B2;
@@ -51,7 +53,10 @@ u {
   @media (max-width: 600px) {
     .form-text {
       color: black;
-      font-size: 14px; } }
+      font-size: 14px;
+      display: inline-block;
+      margin-right: 0px;
+      font-size: 20px; } }
 
 .input-form {
   display: inline-block; }
@@ -94,7 +99,8 @@ u {
   @media (max-width: 600px) {
     .mobile-loginElements {
       display: inline-block;
-      margin-left: 0px; } }
+      margin-left: 0px;
+      width: 100%; } }
 
 .forgotAccount {
   color: #9cb4d8;

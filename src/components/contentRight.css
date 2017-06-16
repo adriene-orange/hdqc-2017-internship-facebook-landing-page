@@ -1,5 +1,10 @@
 .sign-up {
   font-size: 36px; }
+  @media (max-width: 600px) {
+    .sign-up {
+      font-size: 18px;
+      color: #333;
+      margin-top: 15px; } }
 
 .RightContent {
   width: 400px;

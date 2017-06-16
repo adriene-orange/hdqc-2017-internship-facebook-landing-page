@@ -55,6 +55,9 @@ class ContentRight extends Component {
     return (
       <div className="RightContent">
         <div className="mobile-login">
+          <div className="login-title">
+            <p>Existing user? Log in below</p>
+          </div>
           <Login classStyle="mobile-loginElements" />
         </div>
         <div className="RightHeader">

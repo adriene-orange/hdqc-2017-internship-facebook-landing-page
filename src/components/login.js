@@ -4,7 +4,7 @@ import { getUserByUsernameAndPassword } from '../services/users';
 import * as fetchUsername from '../actions/fetchUsername';
 import Button from './button';
 import LoginMessage from './loginMessage';
-import './header.css';
+import './login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -49,23 +49,25 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="loginElements">
+      <div className={this.props.classStyle}>
         <div className="loginItems">
           <form className="form-text" onSubmit={this.handleClick} >
             <div className="input-form">
-              <span>Email or Phone</span> <br />
+              <span className="form-descriptor" >Email or Phone</span> <br />
               <input
                 type="text"
                 name="username"
                 onChange={this.handleChange}
+                placeholder="Email or Phone"
               />
             </div>
             <div className="input-form">
-              <span>Password</span> <br />
+              <span className="form-descriptor" >Password</span> <br />
               <input
                 type="text"
                 name="password"
                 onChange={this.handleChange}
+                placeholder="Password"
               />
             </div>
             <Button
@@ -92,6 +94,7 @@ class Login extends Component {
 
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  classStyle: PropTypes.string.isRequired,
 };
 
 function mapStateToProps(state) {

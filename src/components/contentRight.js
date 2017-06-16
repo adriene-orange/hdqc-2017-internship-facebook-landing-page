@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as signUpActions from '../actions/handleSignup';
 import './contentRight.css';
+import Login from './login';
 
 import Radio from './radioButton';
 
@@ -53,6 +54,12 @@ class ContentRight extends Component {
     };
     return (
       <div className="RightContent">
+        <div className="mobile-login">
+          <div className="login-title">
+            <p>Existing user? Log in below</p>
+          </div>
+          <Login classStyle="mobile-loginElements" />
+        </div>
         <div className="RightHeader">
           <h1 className="sign-up">Sign Up</h1>
           <p className="titleSubtext">It&apos;s free and always will be.</p>

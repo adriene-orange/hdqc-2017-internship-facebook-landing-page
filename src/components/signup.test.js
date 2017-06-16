@@ -4,7 +4,6 @@ import cheerio from 'cheerio';
 import { expect } from 'chai';
 import Signup from './signup';
 import store from '../store';
-import { shallow } from 'enzyme';
 
 describe('Signup', () => {
   const StoreInstance = store();

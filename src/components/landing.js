@@ -3,6 +3,7 @@ import Header from './header';
 import ContentLeft from './contentLeft';
 import ContentRight from './contentRight';
 import Footer from './footer';
+import './landing.css';
 
 const Landing = props => (
   <div className="landing">

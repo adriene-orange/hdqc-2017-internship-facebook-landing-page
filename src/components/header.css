@@ -12,7 +12,7 @@
   background-size: cover;
   display: inline-block;
   cursor: pointer; }
-  @media (max-width: 600px) {
+  @media (max-width: 780px) {
     .logo {
       width: 150px;
       background-position: 0 -15%;
@@ -45,6 +45,9 @@ u {
   width: 100%;
   display: flex;
   align-items: flex-end; }
+  @media (max-width: 780px) {
+    .form-text {
+      margin-right: -5px; } }
 
 .input-form {
   display: inline-block; }
@@ -64,6 +67,9 @@ u {
   padding: 0 10%;
   height: 100%;
   min-width: 150px; }
+  @media (max-width: 780px) {
+    .loginForm {
+      padding: 0; } }
 
 .loginItems {
   display: flex;
@@ -72,8 +78,7 @@ u {
   padding: 5px 0; }
 
 .loginElements {
-  padding-top: 10px;
-  margin-left: 380px; }
+  padding-top: 10px; }
   @media (max-width: 600px) {
     .loginElements {
       display: none; } }
@@ -82,7 +87,8 @@ u {
   color: #9cb4d8;
   font-size: 12px;
   text-decoration: none;
-  display: block; }
+  display: block;
+  width: auto; }
 
 .home-header {
   color: black; }

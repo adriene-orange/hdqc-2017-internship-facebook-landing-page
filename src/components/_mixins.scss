@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin for-phablet-only {
+  @media (max-width: 780px) {
+    @content;
+  }
+}

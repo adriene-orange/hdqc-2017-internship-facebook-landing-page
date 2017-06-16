@@ -17,6 +17,15 @@
   }
 }
 
+.loginItems{
+  display: flex;
+  align-items: flex-end;
+  width: 407px;
+  @include for-phone-only {
+    width: 100%;
+  }
+}
+
 .error-style {
   background-color: red;
   padding: 10px;
@@ -26,7 +35,6 @@
 
 .loginElements{
   padding-top: 10px;
-  margin-left: 380px;
   @include for-phone-only {
     display: none;
     margin-left: 0px;
@@ -46,7 +54,6 @@
   display: flex;
   align-items: flex-end;
   width: 407px;
-  // padding: 5px 0;
   @include for-phone-only {
     width: 100%;
   }
@@ -58,8 +65,6 @@
     width: 100%;
   }
 }
-
-
 
 .button-container {
   display: flex;

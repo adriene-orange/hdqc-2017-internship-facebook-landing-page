@@ -13,6 +13,14 @@
       color: #333;
       font-weight: bold; } }
 
+.loginItems {
+  display: flex;
+  align-items: flex-end;
+  width: 407px; }
+  @media (max-width: 600px) {
+    .loginItems {
+      width: 100%; } }
+
 .error-style {
   background-color: red;
   padding: 10px;
@@ -20,8 +28,7 @@
   display: inline-block; }
 
 .loginElements {
-  padding-top: 10px;
-  margin-left: 380px; }
+  padding-top: 10px; }
   @media (max-width: 600px) {
     .loginElements {
       display: none;

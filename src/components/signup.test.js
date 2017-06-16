@@ -5,7 +5,6 @@ import { expect } from 'chai';
 import Signup from './signup';
 import store from '../store';
 import { shallow } from 'enzyme';
-import Radio from './radioButton';
 
 describe('Signup', () => {
   const StoreInstance = store();

@@ -12,7 +12,7 @@
   background-size: cover;
   display: inline-block;
   cursor: pointer; }
-  @media (max-width: 600px) {
+  @media (max-width: 780px) {
     .logo {
       width: 150px;
       background-position: 0 -15%;
@@ -31,22 +31,6 @@ u {
   width: 407px; }
   @media (max-width: 600px) {
     .loginItems {
-      width: 100%; } }
-
-.loginElements {
-  padding-top: 10px;
-  margin-left: 380px; }
-  @media (max-width: 600px) {
-    .loginElements {
-      display: none;
-      margin-left: 0px; } }
-
-.mobile-loginElements {
-  display: none; }
-  @media (max-width: 600px) {
-    .mobile-loginElements {
-      display: inline-block;
-      margin-left: 0px;
       width: 100%; } }
 
 .home-header {

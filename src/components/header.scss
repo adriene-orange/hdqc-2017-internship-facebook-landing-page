@@ -15,70 +15,34 @@
   background-size: cover;
   display: inline-block;
   cursor: pointer;
-  @include for-phone-only {
+  @include for-phablet-only {
     width: 150px;
     background-position: 0 -15%;
     margin: 0;
   }
 }
 
-
-
-
-
 u {
   left: -999999px;
   position: absolute;
 }
 
-
-
-
-
-
 .form-text > input {
   margin: 5px 0 0 0;
 }
-
-
 
 .loginItems{
   display: flex;
   align-items: flex-end;
   width: 407px;
-  // padding: 5px 0;
   @include for-phone-only {
     width: 100%;
   }
 }
-
-.loginElements{
-  padding-top: 10px;
-  margin-left: 380px;
-  @include for-phone-only {
-    display: none;
-    margin-left: 0px;
-  }
-}
-
-
-.mobile-loginElements{
-  display: none;
-  @include for-phone-only {
-    display: inline-block;
-    margin-left: 0px;
-    width: 100%;
-  }
-}
-
-
 
 .home-header{
   color: black;
 }
-
-
-
 
 .loginForm{
   display: flex;

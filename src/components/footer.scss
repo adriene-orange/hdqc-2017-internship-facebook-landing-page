@@ -20,7 +20,7 @@
 .footer-languages li {
   display: inline-block;
   padding-right: 10px;
-  @include for-phone-only{
+  @include for-phone-only {
     padding-left: 10px;
   }
 }
@@ -33,7 +33,7 @@
 
 .footer-site-map li {
   padding-bottom: 3px;
-  @include for-phone-only{
+  @include for-phone-only {
     display: none;
   }
 }
@@ -79,7 +79,7 @@
   height: 20%;
   background-color: white;
   margin-top: 20px;
-  @include for-phone-only{
+  @include for-phone-only {
     position: relative;
   }
 }

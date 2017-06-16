@@ -2,14 +2,14 @@
 
 .loginItems input::placeholder{
   color: transparent;
-  @include for-phone-only{
+  @include for-phone-only {
     color: #999;
   }
 }
 
 .login-title {
   display: none;
-  @include for-phone-only{
+  @include for-phone-only {
     display: block;
     font-size: 16px;
     color: #333;
@@ -27,7 +27,7 @@
 .loginElements{
   padding-top: 10px;
   margin-left: 380px;
-  @include for-phone-only{
+  @include for-phone-only {
     display: none;
     margin-left: 0px;
   }
@@ -35,7 +35,7 @@
 
 .mobile-loginElements{
   display: none;
-  @include for-phone-only{
+  @include for-phone-only {
     display: inline-block;
     margin-left: 0px;
     width: 100%;
@@ -47,13 +47,13 @@
   align-items: flex-end;
   width: 407px;
   // padding: 5px 0;
-  @include for-phone-only{
+  @include for-phone-only {
     width: 100%;
   }
 }
 
 .input-form input {
-  @include for-phone-only{
+  @include for-phone-only {
     height: 30px;
     width: 100%;
   }
@@ -66,7 +66,7 @@
   padding-left: 10px;
   max-width: 1000px;
   margin: 0;
-  @include for-phone-only{
+  @include for-phone-only {
     padding-left: 0px;
     display: inline-block;
     max-width: 100px;
@@ -93,7 +93,7 @@
   width: 100%;
   display: flex;
   align-items: flex-end;
-  @include for-phone-only{
+  @include for-phone-only {
     color: black;
     display: block;
     margin-right: 0px;
@@ -105,7 +105,7 @@
 
 .input-form + .input-form{
   padding-left: 10px;
-  @include for-phone-only{
+  @include for-phone-only {
     padding-left: 0px;
     width: 100%;
   }

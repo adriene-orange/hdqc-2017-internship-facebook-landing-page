@@ -47,7 +47,7 @@ u {
   align-items: flex-end;
   width: 407px;
   // padding: 5px 0;
-  @include for-phone-only{
+  @include for-phone-only {
     width: 100%;
   }
 }
@@ -55,7 +55,7 @@ u {
 .loginElements{
   padding-top: 10px;
   margin-left: 380px;
-  @include for-phone-only{
+  @include for-phone-only {
     display: none;
     margin-left: 0px;
   }
@@ -64,7 +64,7 @@ u {
 
 .mobile-loginElements{
   display: none;
-  @include for-phone-only{
+  @include for-phone-only {
     display: inline-block;
     margin-left: 0px;
     width: 100%;

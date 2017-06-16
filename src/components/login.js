@@ -4,7 +4,7 @@ import { getUserByUsernameAndPassword } from '../services/users';
 import * as fetchUsername from '../actions/fetchUsername';
 import Button from './button';
 import LoginMessage from './loginMessage';
-import './header.css';
+import './login.css';
 
 class Login extends Component {
   constructor(props) {

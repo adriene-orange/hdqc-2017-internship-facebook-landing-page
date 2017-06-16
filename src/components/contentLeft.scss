@@ -5,6 +5,7 @@
   text-align: left;
   width: 565px;
   margin-right: 15px;
+  margin-left: 50px;
   @include  for-phone-only {
     display: none;
   }

@@ -1,3 +1,5 @@
 @media (max-width: 600px) {
   .landing {
-    max-width: 100%; } }
+    max-width: 100%;
+    min-width: 340px;
+    width: 340px; } }

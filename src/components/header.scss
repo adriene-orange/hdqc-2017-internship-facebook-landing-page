@@ -22,6 +22,20 @@
   }
 }
 
+.loginItems input::placeholder{
+  color: transparent;
+  @include for-phone-only{
+    color: #999;
+  }
+}
+
+.input-form input {
+  @include for-phone-only{
+    height: 30px;
+    width: 100%;
+  }
+}
+
 u {
   left: -999999px;
   position: absolute;
@@ -60,18 +74,20 @@ u {
   align-items: flex-end;
   @include for-phone-only{
     color: black;
-    font-size: 14px;
-    display: inline-block;
+    display: block;
     margin-right: 0px;
-    font-size: 20px;
   }
 }
 .input-form{
-  display: inline-block;
+  display: block;
 }
 
 .input-form + .input-form{
   padding-left: 10px;
+  @include for-phone-only{
+    padding-left: 0px;
+    width: 100%;
+  }
 
 }
 
@@ -134,4 +150,10 @@ u {
   padding: 10px;
   line-height: 25px;
   display: inline-block;
+}
+
+.form-descriptor {
+  @include for-phone-only {
+    display: none;
+  }
 }

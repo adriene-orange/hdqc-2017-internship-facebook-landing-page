@@ -18,6 +18,17 @@
       background-position: 0 -15%;
       margin: 0; } }
 
+.loginItems input::placeholder {
+  color: transparent; }
+  @media (max-width: 600px) {
+    .loginItems input::placeholder {
+      color: #999; } }
+
+@media (max-width: 600px) {
+  .input-form input {
+    height: 30px;
+    width: 100%; } }
+
 u {
   left: -999999px;
   position: absolute; }
@@ -53,16 +64,18 @@ u {
   @media (max-width: 600px) {
     .form-text {
       color: black;
-      font-size: 14px;
-      display: inline-block;
-      margin-right: 0px;
-      font-size: 20px; } }
+      display: block;
+      margin-right: 0px; } }
 
 .input-form {
-  display: inline-block; }
+  display: block; }
 
 .input-form + .input-form {
   padding-left: 10px; }
+  @media (max-width: 600px) {
+    .input-form + .input-form {
+      padding-left: 0px;
+      width: 100%; } }
 
 .form-text > input {
   margin: 5px 0 0 0; }
@@ -116,3 +129,7 @@ u {
   padding: 10px;
   line-height: 25px;
   display: inline-block; }
+
+@media (max-width: 600px) {
+  .form-descriptor {
+    display: none; } }

@@ -53,19 +53,21 @@ class Login extends Component {
         <div className="loginItems">
           <form className="form-text" onSubmit={this.handleClick} >
             <div className="input-form">
-              <span>Email or Phone</span> <br />
+              <span className="form-descriptor" >Email or Phone</span> <br />
               <input
                 type="text"
                 name="username"
                 onChange={this.handleChange}
+                placeholder="Email or Phone"
               />
             </div>
             <div className="input-form">
-              <span>Password</span> <br />
+              <span className="form-descriptor" >Password</span> <br />
               <input
                 type="text"
                 name="password"
                 onChange={this.handleChange}
+                placeholder="Password"
               />
             </div>
             <Button

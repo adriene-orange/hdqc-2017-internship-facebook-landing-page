@@ -3,7 +3,8 @@ import './detail.css';
 // import DetailWrapper from './detailWrapper';
 
 const Detail = (props) => {
-  const { value, userData, imageUrl, detailText } = props;
+  // imageUrl
+  const { value, userData, detailText } = props;
   const matchedValue = userData.interests.filter(item => value === item.subject);
   if (matchedValue.length === 1) {
     return (
@@ -11,10 +12,6 @@ const Detail = (props) => {
         <p className="detail-header" >
           {value}
         </p>
-        <figure className="detail-image">
-          <img src={imageUrl} alt={value} style={{ maxHeight: '500px' }} />
-          <figcaption />
-        </figure>
         <div dangerouslySetInnerHTML={{ __html: detailText }} />
       </div>
     );
@@ -28,11 +25,12 @@ const Detail = (props) => {
     </div>
   );
 };
+// <img src={imageUrl} alt={value} style={{ maxHeight: '500px' }} />
 
 Detail.propTypes = {
   value: PropTypes.string.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
-  imageUrl: PropTypes.string,
+  // imageUrl: PropTypes.string,
   detailText: PropTypes.string,
 };
 

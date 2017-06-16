@@ -22,6 +22,10 @@
   padding-right: 10px;
   @include for-phone-only {
     padding-left: 10px;
+    width: 33%;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-bottom: 5px;
   }
 }
 

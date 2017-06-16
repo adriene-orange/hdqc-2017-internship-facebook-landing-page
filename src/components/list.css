@@ -7,6 +7,9 @@
   margin-top: 50px;
   line-height: 25px;
   border: solid black 1px; }
+  @media (max-width: 600px) {
+    .list {
+      margin: 25px auto; } }
 
 .list-header {
   background-color: #3b5998;

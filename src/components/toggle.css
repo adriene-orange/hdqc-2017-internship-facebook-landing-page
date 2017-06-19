@@ -1,0 +1,45 @@
+input[type=checkbox] {
+  display: none; }
+
+.toggle-login {
+  display: none; }
+
+.toggle-signup {
+  display: inline-block; }
+  @media (max-width: 600px) {
+    .toggle-signup {
+      display: none; } }
+
+.toggle-label {
+  display: inline-block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #627aad;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  color: white;
+  border: 1px solid #1E2B5C;
+  padding: .5em; }
+  .toggle-label:hover {
+    cursor: pointer; }
+
+.signup-label {
+  display: none; }
+  @media (max-width: 600px) {
+    .signup-label {
+      display: inline-block;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      background-color: #69a74e;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      border: 1px solid black;
+      padding: 10px 40px; }
+      .signup-label:hover {
+        cursor: pointer; } }
+
+input[type=checkbox]:checked ~ .toggle-login {
+  display: inline; }
+
+input[type=checkbox]:checked ~ .toggle-signup {
+  display: inline; }

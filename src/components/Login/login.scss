@@ -11,9 +11,6 @@
   display: none;
   @include for-phone-only {
     display: block;
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
   }
 }
 

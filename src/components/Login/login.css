@@ -8,10 +8,7 @@
   display: none; }
   @media (max-width: 600px) {
     .login-title {
-      display: block;
-      font-size: 16px;
-      color: #333;
-      font-weight: bold; } }
+      display: block; } }
 
 .loginItems {
   display: flex;

@@ -1,0 +1,14 @@
+input[type=checkbox] {
+  display: none; }
+
+.toggle-login {
+  display: inline; }
+
+.toggle-label {
+  display: inline-block; }
+
+input[type=checkbox]:checked ~ .toggle-login {
+  display: none; }
+
+input[type=checkbox]:checked + .toggle-label:after {
+  content: "-"; }

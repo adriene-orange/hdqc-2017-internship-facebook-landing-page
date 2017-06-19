@@ -1,0 +1,82 @@
+@import '../global.scss';
+
+.detail {
+  min-width: 250px;
+  flex-grow: 1;
+  color: black;
+  text-align: center;
+  margin-right: 10%;
+  margin-top: 50px;
+  border: solid black 1px;
+
+  @include for-tablet-only {
+    max-width: 80%;
+  }
+  @include for-phone-only {
+    margin: 10px auto;
+  }
+}
+
+.detail img {
+  @include for-tablet-only {
+    max-width: 300px;
+    height: auto;
+  }
+  @include for-phablet-only {
+    max-width: 250px;
+  }
+}
+
+.detail .thumbinner {
+  @include for-desktop-only {
+    float: right;
+  }
+  @include for-tablet-only {
+    width: 100% !important;
+    height: auto;
+  }
+}
+
+.detail p {
+  text-align: left;
+  padding: 0 10px;
+  word-wrap: break-word;
+}
+
+.detail .mw-parser-output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include for-tablet-only {
+    padding: 0 10px;
+  }
+}
+
+.detail .infobox {
+  @include for-tablet-only {
+    width: auto !important;
+  }
+}
+
+.detail .vertical-navbox {
+  @include for-tablet-only {
+    float: none !important;
+  }
+  @include for-phablet-only {
+    width: auto !important;
+  }
+}
+.detail-header {
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: #FDFEFE;
+  margin-top: 0;
+}
+
+.detail-image figcaption {
+  padding-top: 5px;
+}

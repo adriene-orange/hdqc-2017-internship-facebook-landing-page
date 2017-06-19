@@ -1,0 +1,7 @@
+@import '../global.scss';
+
+.landing{
+  @include for-phone-only {
+    width: 100%;
+  }
+}

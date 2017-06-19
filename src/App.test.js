@@ -1,19 +1,17 @@
 // Libs
 import React from 'react';
-import server from 'react-dom/server';
-import cheerio from 'cheerio';
 import { expect } from 'chai';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
 // import { shallow } from 'enzyme';
-import configureStore from 'redux-mock-store'
+// import configureStore from 'redux-mock-store'
 
 // Components
 import App from './App';
-import Landing from './components/landing';
-import Home from './components/home';
+import Landing from './components/Landing/landing';
+// import Home from './components/Home/home';
 import store from './store';
-import * as fetchUsername from './actions/fetchUsername';
+// import * as fetchUsername from './actions/fetchUsername';
 
 describe('App component', () => {
   // const middlewares = [];

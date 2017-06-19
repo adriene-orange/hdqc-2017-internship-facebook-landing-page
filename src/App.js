@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 // Components
 import './App.css';
-import Landing from './components/landing';
-import Home from './components/home';
+import Landing from './components/Landing/landing';
+import Home from './components/Home/home';
 
 const App = (props) => {
   if (props.username) {

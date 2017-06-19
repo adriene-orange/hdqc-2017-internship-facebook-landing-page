@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from './login';
-import Signup from './signup';
+import Login from '../Login/login';
+import Signup from '../Signup/signup';
 import './contentRight.css';
 
 

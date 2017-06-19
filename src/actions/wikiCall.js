@@ -34,9 +34,11 @@ export const getWikiText = (result, pageId) => (dispatch) => {
 // thunk
 export const getWikiData = title => (dispatch) => {
   dispatch(initiateWikiCall());
+  console.log('.............title.....', title);
   return apiCall(title)
   .then(
     (result) => {
+      console.log('........................', result);
       const pageID = result.pages[Object.keys(result.pages)[0]].pageid;
       dispatch(getWikiText(result, pageID));
       dispatch(wikiAccepted(result));

@@ -1,0 +1,35 @@
+@import '../global.scss';
+
+.sign-up {
+  font-size: 36px;
+  @include for-phone-only {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+  }
+}
+
+.RightContent {
+  width: 400px;
+  display: inline-block;
+  @include for-phone-only {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+  }
+}
+
+.titleSubtext {
+  font-size: 18px;
+  color: #333;
+}
+
+.RightHeader{
+  text-align: left;
+}
+
+.subtext {
+  font-size: 11px;
+  text-align: left;
+  color: #777;
+}

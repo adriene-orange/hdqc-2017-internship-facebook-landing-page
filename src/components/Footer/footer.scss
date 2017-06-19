@@ -1,0 +1,89 @@
+@import '../global.scss';
+
+.footer {
+  font-size: 12px;
+  color: #365899;
+  text-align: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-languages {
+  border-bottom: 1px solid lightgrey;
+}
+
+.footer-site-map {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-languages li {
+  display: inline-block;
+  padding-right: 10px;
+  @include for-phone-only {
+    padding-left: 10px;
+    width: 33%;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-bottom: 5px;
+  }
+}
+
+.footer-site-map ul {
+  display: inline-block;
+  list-style: none;
+  text-align: left;
+}
+
+.footer-site-map li {
+  padding-bottom: 3px;
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.footer-site-map ul,
+.footer-languages ul {
+  padding-left: 0;
+}
+
+.footer-site-map ul + ul {
+  padding-left: 20px;
+}
+
+.footer-trademark {
+  margin-top: 5px;
+  color: #737373;
+  font-size: 11px;
+}
+
+.language-expander {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 10px 3px;
+  border-radius: 2px;
+  background-color: #f6f7f9;
+  border: 1px solid #ced0d4;
+  color: #4b4f56;
+}
+
+.add-arrow {
+  background: url('https://www.facebook.com//rsrc.php/v3/yH/r/NiULLO76GrX.png') -145px -35px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: bottom;
+  margin-left: 2px;
+}
+
+.footer-wrapper {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  height: 20%;
+  background-color: white;
+  margin-top: 20px;
+  @include for-phone-only {
+    position: relative;
+  }
+}

@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import Header from './header';
-import ContentLeft from './contentLeft';
-import ContentRight from './contentRight';
-import Footer from './footer';
+import Header from '../Header/header';
+import ContentLeft from '../ContentLeft/contentLeft';
+import ContentRight from '../ContentRight/contentRight';
+import Footer from '../Footer/footer';
 import './landing.css';
 
 const Landing = props => (

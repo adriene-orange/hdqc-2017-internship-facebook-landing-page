@@ -1,12 +1,10 @@
 import React from 'react';
-import server from 'react-dom/server';
-import cheerio from 'cheerio';
 import { expect } from 'chai';
-import ContentRight from './contentRight';
-import Login from './login';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
-import store from '../store';
+import ContentRight from './contentRight';
+import Login from '../Login/login';
+import store from '../../store';
 
 describe('Content Right', () => {
   const StoreInstance = store();

@@ -1,7 +1,7 @@
 import React from 'react';
 import './contentLeft.css';
 
-import FeatureDescription from './featureDescription';
+import FeatureDescription from '../FeatureDescription/featureDescription';
 
 const ContentLeft = () => (
   <div className="contentLeft">

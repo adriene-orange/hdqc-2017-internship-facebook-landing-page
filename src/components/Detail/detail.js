@@ -1,9 +1,7 @@
 import React, { PropTypes } from 'react';
 import './detail.css';
-// import DetailWrapper from './detailWrapper';
 
 const Detail = (props) => {
-  // imageUrl
   const { value, userData, detailText } = props;
   const matchedValue = userData.interests.filter(item => value === item.subject);
   if (matchedValue.length === 1) {
@@ -25,12 +23,10 @@ const Detail = (props) => {
     </div>
   );
 };
-// <img src={imageUrl} alt={value} style={{ maxHeight: '500px' }} />
 
 Detail.propTypes = {
   value: PropTypes.string.isRequired,
   userData: PropTypes.objectOf(PropTypes.array).isRequired,
-  // imageUrl: PropTypes.string,
   detailText: PropTypes.string,
 };
 

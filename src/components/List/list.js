@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
+import ListItems from '../ListItems/listItems';
 import './list.css';
-import ListItems from './listItems';
 
 const List = (props) => {
   const { userData } = props;

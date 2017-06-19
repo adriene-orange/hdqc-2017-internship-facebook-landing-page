@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import * as fetchUsername from '../actions/fetchUsername';
+import * as fetchUsername from '../../actions/fetchUsername';
 import './logout.css';
 
 class Logout extends Component {

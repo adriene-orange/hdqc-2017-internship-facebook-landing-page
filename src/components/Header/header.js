@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import './header.css';
-import Login from './login';
-import Logout from './logout';
+import Login from '../Login/login';
+import Logout from '../Logout/logout';
 
 const Header = (props) => {
   const { username } = props;

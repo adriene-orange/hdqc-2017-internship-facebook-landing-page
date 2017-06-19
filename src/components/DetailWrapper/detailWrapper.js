@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Detail from './detail';
-import * as wikiCall from '../actions/wikiCall';
-import './loadingSpinner.css';
+import Detail from '../Detail/detail';
+import * as wikiCall from '../../actions/wikiCall';
+import '../LoadingSpinner/loadingSpinner.css';
 
 
 class DetailWrapper extends Component {

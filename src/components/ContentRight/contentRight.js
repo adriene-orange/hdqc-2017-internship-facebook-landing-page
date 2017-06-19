@@ -1,8 +1,8 @@
 import React from 'react';
-import './contentRight.css';
 import Login from './login';
-
 import Signup from './signup';
+import './contentRight.css';
+
 
 const ContentRight = () => (
   <div className="RightContent">

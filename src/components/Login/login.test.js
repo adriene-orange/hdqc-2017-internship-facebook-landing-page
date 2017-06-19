@@ -3,7 +3,7 @@ import server from 'react-dom/server';
 import cheerio from 'cheerio';
 import { expect } from 'chai';
 import Login from './login';
-import store from '../store';
+import store from '../../store';
 
 describe('Login component', () => {
   const StoreInstance = store();

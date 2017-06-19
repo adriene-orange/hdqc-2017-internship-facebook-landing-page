@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Label from './label';
+import Label from '../Label/label';
 
 class Radio extends Component {
   constructor(props) {

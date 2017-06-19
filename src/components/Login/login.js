@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getUserByUsernameAndPassword } from '../services/users';
-import * as fetchUsername from '../actions/fetchUsername';
-import Button from './button';
-import LoginMessage from './loginMessage';
+import Button from '../Button/button';
+import LoginMessage from '../LoginMessage/loginMessage';
+import { getUserByUsernameAndPassword } from '../../services/users';
+import * as fetchUsername from '../../actions/fetchUsername';
 import './login.css';
 
 class Login extends Component {

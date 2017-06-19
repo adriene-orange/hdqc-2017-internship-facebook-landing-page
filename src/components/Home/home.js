@@ -3,12 +3,12 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 // Components
+import List from '../List/list';
+import DetailWrapper from '../DetailWrapper/detailWrapper';
+import Header from '../Header/header';
+import Footer from '../Footer/footer';
+import * as userData from '../../data/store';
 import './home.css';
-import List from './list';
-import DetailWrapper from './detailWrapper';
-import Header from './header';
-import Footer from './footer';
-import * as userData from '../data/store';
 
 const Home = props => (
   <div className="home-container">

@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import * as signUpActions from '../actions/handleSignup';
+import * as signUpActions from '../../actions/handleSignup';
 import './signup.css';
-import Radio from './radioButton';
+import Radio from '../RadioButton/radioButton';
 
 class Signup extends Component {
   constructor(props) {

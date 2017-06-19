@@ -1,9 +1,8 @@
 
 import React, { Component, PropTypes } from 'react';
-import shortid from 'shortid';
-// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as selectInterest from '../actions/selectInterest';
+import shortid from 'shortid';
+import * as selectInterest from '../../actions/selectInterest';
 import './listItems.css';
 
 

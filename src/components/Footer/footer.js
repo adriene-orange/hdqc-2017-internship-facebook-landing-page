@@ -1,7 +1,7 @@
 import React from 'react';
+import Button from '../Button/button';
+import FooterMap from '../FooterMap/FooterMap';
 import './footer.css';
-import Button from './button';
-import FooterMap from './FooterMap';
 
 const Footer = () => {
   const colArray1 = ['Sign Up', 'Celebrities', 'Privacy'];

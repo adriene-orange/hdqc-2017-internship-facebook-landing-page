@@ -1,9 +1,7 @@
 import React from 'react';
-import server from 'react-dom/server';
-import cheerio from 'cheerio';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import store from '../store';
+import store from '../../store';
 
 import DetailWrapper from './detailWrapper';
 // import Detail from './detail';
@@ -11,8 +9,8 @@ import DetailWrapper from './detailWrapper';
 
 describe('Detail Wrapper', () => {
   const StoreInstance = store();
-  const result = { pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } };
-  const props = { value: '', userData: [{}, {}], result: { ...result }, dispatch: () => {} };
+  // const result = { pages: { randomNumber: { thumbnail: { source: 'alskdfj' } } } };
+  // const props = { value: '', userData: [{}, {}], result: { ...result }, dispatch: () => {} };
 
   it('renders without crashing', () => {
     const wrapper = shallow(<DetailWrapper store={StoreInstance} />);

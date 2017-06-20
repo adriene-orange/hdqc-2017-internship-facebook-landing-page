@@ -24,7 +24,25 @@ describe('it is fake facebook', () => {
     driver.findElement(By.css('.list-item:nth-child(1) a')).click();
     driver.wait(until.elementLocated(By.css('.detail .detail-header')));
     return driver.findElement(By.css('.detail .detail-header')).getText()
-      .then(selected => expect(selected).to.equal('Art'));
+      .then(header => expect(header).to.equal('Art'));
+  });
+
+  it('tests for loading screen', () => {
+    return driver.findElement(By.css('.detail .detail-header + div')).getText()
+      .then(selected => expect(selected).to.equal('Loading...'));
+  });
+
+  it('tests for api result', () => {
+    driver.wait(until.elementLocated(By.css('div div a img')));
+    return driver.findElement(By.css('div div a img'))
+      .then(selected => expect(selected).to.be.ok);
+  });
+
+  it('logs out correctly', () => {
+    driver.findElement(By.css('.logout')).click();
+    driver.wait(until.elementLocated(By.css('.landing')));
+    return driver.findElement(By.css('.landing'))
+      .then(selected => expect(selected).to.be.ok);
   });
 
   after((done) => {

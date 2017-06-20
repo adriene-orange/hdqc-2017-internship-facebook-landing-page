@@ -94,6 +94,14 @@
   "eslintConfig": {
     "extends": "airbnb",
     "rules": {
+      "no-unused-expressions": [
+        0,
+        {
+          "extensions": [
+            "*.test.js"
+          ]
+        }
+      ],
       "import/no-extraneous-dependencies": 0,
       "import/prefer-default-export": 0,
       "no-console": 0,

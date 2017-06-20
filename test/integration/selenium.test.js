@@ -21,8 +21,11 @@ describe('it is fake facebook', () => {
   });
 
   it('selects book from list', () => {
-
-  })
+    driver.findElement(By.css('.list-item:nth-child(1) a')).click();
+    driver.wait(until.elementLocated(By.css('.detail .detail-header')));
+    return driver.findElement(By.css('.detail .detail-header')).getText()
+      .then(selected => expect(selected).to.equal('Art'));
+  });
 
   after((done) => {
     driver.quit()

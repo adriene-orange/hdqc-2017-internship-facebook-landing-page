@@ -6,15 +6,22 @@ const driver = new webdriver.Builder()
   .forBrowser('chrome')
   .build();
 
-// const landing = require('./landing')(driver);
+// const Dimension = webdriver.Dimension();
 const landingPage = landing(driver);
 
 before(() => landingPage.navigate());
 
-it('navigates to the page', () => {
-  expect(driver.navigate().to('https://jonnyohjonnyo.github.io/hdqc-2017-internship-facebook-landing-page/'));
-});
+describe('landing page header', () => {
+  it('navigates to the page', () => {
+    expect(landingPage.navigate()).to.be.ok;
+  });
 
-it('renders a facebook logo', () => {
-  expect(landingPage.findLogo()).to.be.good;
+  it('renders a facebook logo', () => {
+    expect(landingPage.findLogo()).to.be.ok;
+  });
+
+  it('removes login component if screen size is mobile', () => {
+    driver.manage().window().setSize(414, 736);
+    expect(landingPage.findLoginElements()).to.be.ok;
+  });
 });

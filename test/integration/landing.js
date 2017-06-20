@@ -7,6 +7,8 @@ export default function (driver) {
   const elements = {
     headerLogo: By.css('.logo'),
     loginElements: By.css('.loginElements'),
+    toggleLabel: By.css('.toggle-label'),
+    mobileLoginElements: By.css('.mobile-loginElements'),
   };
 
   return {
@@ -19,7 +21,10 @@ export default function (driver) {
       return driver.wait(until.elementLocated(elements.headerLogo));
     },
     findLoginElements() {
-      return driver.wait(until.elementIsNotVisible(elements.loginElements));
+      return driver.findElement(elements.loginElements).isDisplayed();
+    },
+    findMobileLogin() {
+      return driver.findElement(elements.toggleLabel).isDisplayed();
     },
   };
 }

@@ -31,6 +31,7 @@
     "case-sensitive-paths-webpack-plugin": "2.0.0",
     "chalk": "1.1.3",
     "cheerio": "^0.22.0",
+    "chromedriver": "^2.30.1",
     "connect-history-api-fallback": "1.3.0",
     "cross-env": "^5.0.0",
     "cross-spawn": "4.0.2",
@@ -78,7 +79,8 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && node scripts/build.js",
     "test": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/components/**/*.test.js ./src/*.test.js ./src/**/*.test.js",
-    "test-watch": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/components/**/*.test.js ./src/*.test.js ./src/**/*.test.js --watch"
+    "test-watch": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/components/**/*.test.js ./src/*.test.js ./src/**/*.test.js --watch",
+    "test-integration": "cross-env NODE_ENV=test mocha --require babel-core/register ./test/integration/*.test.js"
   },
   "babel": {
     "presets": [

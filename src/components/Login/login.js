@@ -55,6 +55,7 @@ class Login extends Component {
             <div className="input-form">
               <span className="form-descriptor" >Email or Phone</span> <br />
               <input
+                className="class-username"
                 type="text"
                 name="username"
                 onChange={this.handleChange}
@@ -64,6 +65,7 @@ class Login extends Component {
             <div className="input-form">
               <span className="form-descriptor" >Password</span> <br />
               <input
+                className="password"
                 type="text"
                 name="password"
                 onChange={this.handleChange}

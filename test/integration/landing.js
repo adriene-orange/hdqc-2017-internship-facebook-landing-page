@@ -9,6 +9,10 @@ export default function (driver) {
     loginElements: By.css('.loginElements'),
     toggleLabel: By.css('.toggle-label'),
     mobileLoginElements: By.css('.mobile-loginElements'),
+    usernameInput: By.css('.input-form'),
+    passwordInput: By.css('.input-form:nth-child(2) input'),
+    loginButton: By.css('.form-text .button'),
+    homePage: By.css('.list-header'),
   };
 
   return {
@@ -27,11 +31,25 @@ export default function (driver) {
       return driver.findElement(elements.toggleLabel).isDisplayed();
     },
     clickLogin() {
-      driver.findElement(elements.toggleLabel).click();
-      return this.findMobileLogin();
+      return driver.findElement(elements.toggleLabel).click();
     },
     findMobileLogin() {
       return driver.findElement(elements.mobileLoginElements).isDisplayed();
     },
+    findUsernameInput() {
+      return driver.findElement(elements.usernameInput).isDisplayed();
+    },
+    // enterLoginInput() {
+    //   if (this.findMobileLogin()) {
+    //     driver.findElement(elements.usernameInput).sendKeys('hdqc');
+    //   }
+    //   // driver.findElement(elements.passwordInput).sendKeys('hdqc');
+    //   // driver.wait(until.elementLocated(loginButton));
+    //   // driver.findElement(elements.loginButton).click();
+    //   // return findHomePage();
+    // },
+    // findHomePage() {
+    //   return driver.findElement(elements.homePage).getText();
+    // },
   };
 }

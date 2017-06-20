@@ -1,10 +1,8 @@
-require('geckodriver');
-
 const webdriver = require('selenium-webdriver');
 const By = webdriver.By;
 
 const driver = new webdriver.Builder()
-    .forBrowser('firefox')
+    .forBrowser('chrome')
     .build();
 
 // ask the browser to open a page

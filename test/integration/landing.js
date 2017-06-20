@@ -9,10 +9,10 @@ export default function (driver) {
     loginElements: By.css('.loginElements'),
     toggleLabel: By.css('.toggle-label'),
     mobileLoginElements: By.css('.mobile-loginElements'),
-    usernameInput: By.css('.input-form'),
-    passwordInput: By.css('.input-form:nth-child(2) input'),
+    usernameInput: By.name('username'),
+    passwordInput: By.name('password'),
     loginButton: By.css('.form-text .button'),
-    homePage: By.css('.list-header'),
+    homePage: By.css('.home'),
   };
 
   return {
@@ -37,7 +37,24 @@ export default function (driver) {
       return driver.findElement(elements.mobileLoginElements).isDisplayed();
     },
     findUsernameInput() {
-      return driver.findElement(elements.usernameInput).isDisplayed();
+      console.log('.......1');
+      driver.wait(until.elementLocated(elements.usernameInput));
+      driver.findElement(elements.usernameInput).isDisplayed().then(state => console.log('...username found:', state));
+      return driver.findElement(elements.usernameInput);
+    },
+    findPasswordInput() {
+      console.log('.......2');
+      driver.findElement(elements.passwordInput).isDisplayed().then(state => console.log('...password found:', state));
+      return driver.findElement(elements.passwordInput);
+    },
+    findLoginButton() {
+      console.log('.......3');
+      driver.findElement(elements.loginButton).isDisplayed().then(state => console.log('...submit found:', state));
+      return driver.findElement(elements.loginButton);
+    },
+    findHomePage() {
+      console.log('.......4');
+      return driver.findElement(elements.homePage);
     },
     // enterLoginInput() {
     //   if (this.findMobileLogin()) {

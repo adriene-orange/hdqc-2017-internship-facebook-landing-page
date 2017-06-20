@@ -57,6 +57,7 @@ class Login extends Component {
               <input
                 type="text"
                 name="username"
+                className="username-input"
                 onChange={this.handleChange}
                 placeholder="Email or Phone"
               />
@@ -66,6 +67,7 @@ class Login extends Component {
               <input
                 type="text"
                 name="password"
+                className="passowrd-input"
                 onChange={this.handleChange}
                 placeholder="Password"
               />

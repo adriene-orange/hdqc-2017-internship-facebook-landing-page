@@ -48,15 +48,22 @@ describe('landing page content', () => {
     return landingPage.findMobileLogin()
       .then(state => expect(state).to.be.true);
   });
-});
 
-describe('Login test', () => {
   it('renders home page after a successful login', () => {
-    driver.findElement(By.css('.input-form:nth-child(1) input')).sendKeys('hdqc');
-    driver.findElement(By.css('.input-form:nth-child(2) input')).sendKeys('hdqc');
-    driver.wait(until.elementLocated(By.css('.form-text .button')));
-    driver.findElement(By.css('.form-text .button')).click();
-    return driver.findElement(By.css('.list-header')).getText()
-      .then(header => expect(header).to.equal('Interests'));
+    landingPage.findUsernameInput()
+      .then(() => console.log('....sent username'));
+
+    landingPage.findPasswordInput()
+      .then(() => console.log('....sent password'));
+
+    landingPage.findLoginButton().submit()
+      .then(() => console.log('....submitted'));
+
+    // return driver.wait(until.elementsLocated(landingPage.findHomePage())
+    //   .then(state => expect(state).to.be.true));
   });
 });
+
+// describe('Login test', () => {
+//
+// });

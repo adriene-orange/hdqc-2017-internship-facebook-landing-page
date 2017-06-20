@@ -19,17 +19,27 @@ describe('landing page header', () => {
   it('renders a facebook logo', () => {
     expect(landingPage.findLogo()).to.be.ok;
   });
-  it('finds toggle button components in the content if screen size is mobile', () => {
-    driver.manage().window().setSize(414, 736);
-    // console.log(landingPage.findLoginElements());
-    landingPage.findMobileLogin()
-      .then(state => expect(state).to.be.true);
-  });
   it('removes login component if screen size is mobile', () => {
     driver.manage().window().setSize(414, 736);
-    // console.log(landingPage.findLoginElements());
     landingPage.findLoginElements()
       .then(state => expect(state).to.be.false);
-    // console.log(landingPage.findLoginElements());
+  });
+});
+
+describe('landing page content', () => {
+  it('finds a toggle button for login if screen size is mobile', () => {
+    driver.manage().window().setSize(414, 736);
+    landingPage.findToggleElement()
+      .then(state => expect(state).to.be.true);
+  });
+  it('does not find a login component until button is clicked', () => {
+    driver.manage().window().setSize(414, 736);
+    landingPage.findLoginElements()
+      .then(state => expect(state).to.be.false);
+  });
+  it('finds login form when login button is clicked', () => {
+    driver.manage().window().setSize(414, 736);
+    landingPage.clickLogin()
+      .then(state => expect(state).to.be.true);
   });
 });

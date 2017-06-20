@@ -23,8 +23,15 @@ export default function (driver) {
     findLoginElements() {
       return driver.findElement(elements.loginElements).isDisplayed();
     },
-    findMobileLogin() {
+    findToggleElement() {
       return driver.findElement(elements.toggleLabel).isDisplayed();
+    },
+    clickLogin() {
+      driver.findElement(elements.toggleLabel).click();
+      return this.findMobileLogin();
+    },
+    findMobileLogin() {
+      return driver.findElement(elements.mobileLoginElements).isDisplayed();
     },
   };
 }

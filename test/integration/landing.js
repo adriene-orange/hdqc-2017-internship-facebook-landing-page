@@ -9,9 +9,9 @@ export default function (driver) {
     loginElements: By.css('.loginElements'),
     toggleLabel: By.css('.toggle-label'),
     mobileLoginElements: By.css('.mobile-loginElements'),
-    usernameInput: By.name('username'),
-    passwordInput: By.name('password'),
-    loginButton: By.css('.form-text .button'),
+    usernameInput: By.css('.mobile-loginElements input[name=username]'),
+    passwordInput: By.css('.mobile-loginElements input[name=password]'),
+    loginButton: By.css('.mobile-loginElements button'),
     homePage: By.css('.home'),
   };
 
@@ -39,6 +39,8 @@ export default function (driver) {
     findUsernameInput() {
       console.log('.......1');
       driver.wait(until.elementLocated(elements.usernameInput));
+      // driver.findElement(elements.usernameInput).isDisplayed()
+      // .then(state => console.log('...username found:', state));
       driver.findElement(elements.usernameInput).isDisplayed().then(state => console.log('...username found:', state));
       return driver.findElement(elements.usernameInput);
     },

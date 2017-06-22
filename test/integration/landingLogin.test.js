@@ -50,8 +50,7 @@ describe('landing page content', () => {
   });
 
   it('renders home page after a successful login', () => {
-    landingPage.findUsernameInput()
-      .then(() => console.log('....sent username'));
+    landingPage.findUsernameInput();
 
     landingPage.findPasswordInput()
       .then(() => console.log('....sent password'));

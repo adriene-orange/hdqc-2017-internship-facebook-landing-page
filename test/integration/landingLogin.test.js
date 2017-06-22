@@ -50,16 +50,16 @@ describe('landing page content', () => {
   });
 
   it('renders home page after a successful login', () => {
-    landingPage.findUsernameInput();
-
+    landingPage.findUsernameInput()
+      .then(() => console.log('....sent username'));
     landingPage.findPasswordInput()
       .then(() => console.log('....sent password'));
 
-    landingPage.findLoginButton().submit()
+    landingPage.findLoginButton()
       .then(() => console.log('....submitted'));
 
-    // return driver.wait(until.elementsLocated(landingPage.findHomePage())
-    //   .then(state => expect(state).to.be.true));
+    return landingPage.findHomePage()
+      .then(state => expect(state).to.be.true);
   });
 });
 

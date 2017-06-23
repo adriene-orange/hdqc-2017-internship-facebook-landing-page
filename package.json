@@ -82,7 +82,7 @@
     "build": "npm run build-css && node scripts/build.js",
     "test": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/components/**/*.test.js ./src/*.test.js ./src/**/*.test.js",
     "test-watch": "cross-env NODE_ENV=test mocha --require babel-core/register ./src/components/**/*.test.js ./src/*.test.js ./src/**/*.test.js --watch",
-    "test-integration": "cross-env NODE_ENV=test mocha --require babel-core/register ./test/integration/*.test.js"
+    "test-integration": "cross-env NODE_ENV=test mocha --require babel-core/register ./test/integration/*.test.js --watch"
   },
   "babel": {
     "presets": [
@@ -96,6 +96,15 @@
   "eslintConfig": {
     "extends": "airbnb",
     "rules": {
+      "no-unused-expressions": [
+        0,
+        {
+          "extensions": [
+            "*.test.js"
+          ]
+        }
+      ],
+      "import/no-extraneous-dependencies": 0,
       "import/prefer-default-export": 0,
       "no-console": 0,
       "no-undef": 0,
